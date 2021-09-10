@@ -1,0 +1,3053 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+<head>
+
+    <meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"363e987a0a",applicationID:"79998397"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Trafik och stadsplanering | Helsingborg.se</title>
+
+    <meta name="pubdate" content="2015-01-05">
+    <meta name="moddate" content="2021-08-30">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="HandheldFriendly" content="true"/>
+
+    <script>
+        var ajaxurl = 'https://helsingborg.se/wp/wp-admin/admin-ajax.php';
+    </script>
+
+    
+    <meta http-equiv="X-Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' http://helsingborg.se/* https://helsingborg.se/* http://*.helsingborg.se https://*.helsingborg.se https://* http://* https://* http://* https://* http://* https://* http://*; img-src 'self' data: http://helsingborg.se/* https://helsingborg.se/* http://*.helsingborg.se https://*.helsingborg.se https://* http://* https://* http://* https://* http://* https://* http://*; object-src 'self' data: http://helsingborg.se/* https://helsingborg.se/* http://*.helsingborg.se https://*.helsingborg.se https://* http://* https://* http://* https://* http://* https://* http://*; frame-src 'self' data: http://helsingborg.se/* https://helsingborg.se/* http://*.helsingborg.se https://*.helsingborg.se https://* http://* https://* http://* https://* http://* https://* http://*; ">
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' http://helsingborg.se/* https://helsingborg.se/* http://*.helsingborg.se https://*.helsingborg.se https://* http://* https://* http://* https://* http://* https://* http://*; img-src 'self' data: http://helsingborg.se/* https://helsingborg.se/* http://*.helsingborg.se https://*.helsingborg.se https://* http://* https://* http://* https://* http://* https://* http://*; object-src 'self' data: http://helsingborg.se/* https://helsingborg.se/* http://*.helsingborg.se https://*.helsingborg.se https://* http://* https://* http://* https://* http://* https://* http://*; frame-src 'self' data: http://helsingborg.se/* https://helsingborg.se/* http://*.helsingborg.se https://*.helsingborg.se https://* http://* https://* http://* https://* http://* https://* http://*; ">
+
+<!-- The SEO Framework by Sybre Waaijer -->
+<meta property="og:image" content="https://helsingborg.se/wp-content/uploads/2019/03/default-meta-image-1.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="sv_SE" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Trafik och stadsplanering | Helsingborg.se" />
+<meta property="og:url" content="tos.html" />
+<meta property="og:site_name" content="Helsingborg.se" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Trafik och stadsplanering | Helsingborg.se" />
+<meta name="twitter:image" content="https://helsingborg.se/wp-content/uploads/2019/03/default-meta-image-1.jpg" />
+<meta name="twitter:image:width" content="1200" />
+<meta name="twitter:image:height" content="630" />
+<link rel="canonical" href="tos.html" />
+<!-- / The SEO Framework by Sybre Waaijer | 3.30ms meta | 1.44ms boot -->
+
+<link rel='dns-prefetch' href='//cdn.polyfill.io' />
+<link rel='dns-prefetch' href='//instant.page' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Flöde för Helsingborg.se &raquo; Trafik och stadsplanering" href="tos.htmlfeed/" />
+<link rel='stylesheet' id='material-icons-css'  href='https://fonts.googleapis.com/icon?family=Material+Icons&#038;ver=5.8' type='text/css' media='all' />
+<link rel='stylesheet' id='styleguide-css-css'  href='https://helsingborg.se/wp-content/themes/municipio/assets/dist/css/styleguide.bc3c46b4.css' type='text/css' media='all' />
+<link rel='stylesheet' id='municipio-css-css'  href='https://helsingborg.se/wp-content/themes/municipio/assets/dist/css/municipio.f4beb664.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://helsingborg.se/wp/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<style id='wp-block-library-theme-inline-css' type='text/css'>
+#start-resizable-editor-section{display:none}.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-code{font-family:Menlo,Consolas,monaco,monospace;color:#1e1e1e;padding:.8em 1em;border:1px solid #ddd;border-radius:4px}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-pullquote{border-top:4px solid;border-bottom:4px solid;margin-bottom:1.75em;color:currentColor}.wp-block-pullquote__citation,.wp-block-pullquote cite,.wp-block-pullquote footer{color:currentColor;text-transform:uppercase;font-size:.8125em;font-style:normal}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;position:relative;font-style:normal}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-group.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto;opacity:.4}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{padding:.5em;border:1px solid;word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-template-part.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}#end-resizable-editor-section{display:none}
+</style>
+<link rel='stylesheet' id='modularity-json-render-front-css'  href='https://helsingborg.se/wp-content/plugins/modularity-json-render/dist/css/modularity-json-render-front.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='form-builder-css'  href='https://helsingborg.se/wp-content/plugins/modularity-form-builder/dist/css/modularity-form-builder.27a7c401.css' type='text/css' media='all' />
+<link rel='stylesheet' id='modularity-event-css'  href='https://helsingborg.se/wp-content/plugins/api-event-manager-integration/dist/js/event-integration-module-event.ff7addfd.css' type='text/css' media='all' />
+<link rel='stylesheet' id='modularity-contact-banner-css-css'  href='https://helsingborg.se/wp-content/plugins/modularity-contact-banner/dist/css/modularity-contact-banner.72b4de3d8ae5b641b298.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='modularity-guides-css'  href='https://helsingborg.se/wp-content/plugins/modularity-guides/dist/css/modularity-guides.34d92678.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cookies-and-content-security-policy-css'  href='https://helsingborg.se/wp-content/plugins/cookies-and-content-security-policy/css/cookies-and-content-security-policy.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='job-listings-css-css'  href='https://helsingborg.se/wp-content/plugins/job-listings/dist/css/job-listings.c30bc868eacc0b082672.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='customer-feedback-css'  href='https://helsingborg.se/wp-content/plugins/customer-feedback/dist/css/customer-feedback.066e2744.css' type='text/css' media='all' />
+<link rel='stylesheet' id='event-integration-css'  href='https://helsingborg.se/wp-content/plugins/api-event-manager-integration/dist/css/event-manager-integration.8074451c.css' type='text/css' media='all' />
+<link rel='stylesheet' id='modularity-css'  href='https://helsingborg.se/wp-content/plugins/modularity/dist/css/modularity.min.css' type='text/css' media='all' />
+<script type='text/javascript' defer="defer" src='https://cdn.polyfill.io/v3/polyfill.min.js?ver=5.8' id='polyfill-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/themes/municipio/assets/dist/js/styleguide.58dcc08af0e7007322f4.js' id='styleguide-js-js'></script>
+<script type='text/javascript' id='municipio-js-js-extra'>
+/* <![CDATA[ */
+var likeButtonData = {"ajax_url":"https:\/\/helsingborg.se\/wp\/wp-admin\/admin-ajax.php","nonce":"1edc32288c"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/themes/municipio/assets/dist/js/municipio.0819e63ac6d5503a42d2.js' id='municipio-js-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/modularity/dist/js/mod-posts-load-more-button.min.js' id='mod-posts-load-more-button-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/modularity-form-builder/dist/js/modularity-form-builder-referer.47213571.js' id='form-builder-js-referer-js'></script>
+<script type='text/javascript' src='https://helsingborg.se/wp/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://helsingborg.se/wp/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp/wp-includes/js/dist/vendor/regenerator-runtime.min.js' id='regenerator-runtime-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp/wp-includes/js/dist/vendor/wp-polyfill.min.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp/wp-includes/js/dist/vendor/react.min.js' id='react-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp/wp-includes/js/dist/vendor/react-dom.min.js' id='react-dom-js'></script>
+<script type='text/javascript' id='modularity-json-render-js-extra'>
+/* <![CDATA[ */
+var modJsonRender = {"translation":{"somethingWentWrong":"N\u00e5got gick fel, v\u00e4nligen f\u00f6rs\u00f6k igen senare.","noResults":"Inga resultat hittades.","filterOn":"Filtrera p\u00e5\u2026","next":"N\u00e4sta","prev":"F\u00f6reg\u00e5ende","search":"S\u00f6k"}};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/modularity-json-render/dist/js/Front/IndexFront.min.js' id='modularity-json-render-js'></script>
+<script type='text/javascript' id='customer-feedback-js-extra'>
+/* <![CDATA[ */
+var feedback = {"comment_min_characters":"Kommentaren m\u00e5ste vara minst 15 tecken.","select_topic":"V\u00e4nligen v\u00e4lj ett \u00e4mne.","enter_email":"V\u00e4nligen ange en giltig epostadress. "};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/customer-feedback/dist/js/customer-feedback.efe8d1db.js' id='customer-feedback-js'></script>
+<!-- site-navigation-element Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https:\/\/schema.org","@graph":[{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"F\u00f6retagare","url":"https:\/\/foretagare.helsingborg.se"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"E-tj\u00e4nster och blanketter","url":"https:\/\/eservice.helsingborg.se\/#"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Bes\u00f6kare","url":"http:\/\/www.visithelsingborg.com\/"}]}</script><!-- / site-navigation-element Schema optimized by Schema Pro --><!-- sitelink-search-box Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"WebSite","name":"Helsingborg Stad","url":"https:\/\/helsingborg.se","potentialAction":[{"@type":"SearchAction","target":"https:\/\/helsingborg.se\/wp\/?s={search_term_string}","query-input":"required name=search_term_string"}]}</script><!-- / sitelink-search-box Schema optimized by Schema Pro --><!-- breadcrumb Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/helsingborg.se\/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@id":"http:\/\/helsingborg.se\/trafik-och-stadsplanering\/","name":"Trafik och stadsplanering"}}]}</script><!-- / breadcrumb Schema optimized by Schema Pro -->
+            <style>
+                body {
+                    font-family: Roboto,system,Segoe UI,Tahoma,-apple-system;
+                }
+            </style>
+        <link rel="icon" href="https://helsingborg.se/wp-content/uploads/2017/05/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon-precomposed" href="https://helsingborg.se/wp-content/uploads/2017/05/touch-icon.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="https://helsingborg.se/wp-content/uploads/2017/05/touch-icon-ms.png">
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://stats.helsingborg.se/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+<style type="text/css" id="cookies-and-content-security-policy-css-custom">.modal-cacsp-position .modal-cacsp-box .modal-cacsp-box-header {background-color: #ae0b05;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-box-header,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-box-header * {color: #ffffff;}.modal-cacsp-position .modal-cacsp-box.modal-cacsp-box-settings .modal-cacsp-box-settings-list ul li a.modal-cacsp-toggle-switch.modal-cacsp-toggle-switch-active span.modal-cacsp-toggle {background-color: rgba(174,11,5, .2);}.modal-cacsp-position .modal-cacsp-box.modal-cacsp-box-settings .modal-cacsp-box-settings-list ul li a.modal-cacsp-toggle-switch.modal-cacsp-toggle-switch-active span.modal-cacsp-toggle-switch-handle {background-color: #ae0b05;}.modal-cacsp-position .modal-cacsp-box.modal-cacsp-box-settings .modal-cacsp-box-settings-list ul li a.modal-cacsp-toggle-switch.modal-cacsp-toggle-switch-active span {color: #ae0b05;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept-all {background-color: #ae0b05;}.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept,.modal-cacsp-position .modal-cacsp-box .modal-cacsp-btns .modal-cacsp-btn.modal-cacsp-btn-accept-all {border-color: #ae0b05;}</style><meta name="google-site-verification" content="Mg4roQt1zi_-HRVTPiTKpXuc7HPxHJUZ9gzjMyNBhnM" /><style>/* Cookies and security policy */ 
+
+body.modal-cacsp-open.modal-cacsp-open-no-backdrop .modal-cacsp-position {
+z-index: 99999 !important; 
+box-shadow: 0 0 80px rgba(0,0,0,.2) !important;
+}
+
+.modal-cacsp-btn.modal-cacsp-btn-settings {
+display: none !important; 
+}
+
+#cookie-consent {display: none!important;}
+
+#menu-sidfotsmeny a {
+display: block; 
+padding: 8px 16px; 
+background: #eee; 
+color: #000; 
+}
+
+.modularity-mod-contact-banner {margin-bottom: 0 !important;}
+
+
+</style>
+
+</head>
+
+<body class="archive post-type-archive post-type-archive-trafik-och-stadspla no-js wp-schema-pro-2.1.2 modal-cacsp-open-no-backdrop t-municipio" js-page-id="3334">
+    <div class="site-wrapper">
+
+        
+                                    <!-- header.blade.php -->
+<header id="site-header" class="c-header site-header c-header c-header--business c-header--none" data-uid="613a1ce7310e8">
+
+      <div class="c-header__menu c-header__menu--primary">
+        <div class="o-container">
+            <div class="u-display--flex u-justify-content--space-between u-align-content--center">
+                
+                <a id="613a1ce7292f7" class="c-link u-margin__right--auto u-display--flex" target="_top" href="index.html" role="link" data-uid="613a1ce7292e9">
+        <!-- logotype.blade.php -->
+<figure id="613a1ce7291f5" class="c-logotype c-nav__logo ripple ripple--before" data-uid="613a1ce7291e7">
+            <img src="https://helsingborg.se/wp-content/uploads/2017/05/helsingborg-1.svg" alt="Gå till startsidan" class="c-logotype__image" />
+            </figure>
+    </a>
+
+                <button id="613a1ce7294023.96008441" class="c-button mobile-menu-trigger js-burger js-trigger-drawer u-display--none@lg c-button__basic c-button__basic--default c-button--md ripple ripple--before" href="" target="_top" aria-label="Meny" aria-controls="navigation" type="button" aria-pressed="false" data-uid="613a1ce72942f">   
+    <span class="c-button__label">
+    
+                    <span class="c-button__label-text">
+                Meny
+            </span>
+
+            <span class="c-button__label-icon">
+                <!-- icon.blade.php -->
+    <i id="613a1ce72954e" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce729540">
+                    keyboard_arrow_down
+            </i>
+            </span>
+        
+                    
+            
+    </span>
+</button>
+                
+                <nav role="navigation" aria-label="Relaterade länkar"
+        class="u-display--flex@lg u-display--flex@lx u-display--none@xs
+                u-display--none@sm u-display--none@md u-print-display--none">
+        <!-- group.blade.php -->
+<div class="c-group u-justify-content--center@xs u-justify-content--center@sm u-justify-content--end u-box-shadow--1 u-rounded u-margin--auto c-group--horizontal">
+    <a id="613a1ce72972f1.64193941" class="c-button c-button__basic c-button__basic--default c-button--sm ripple ripple--before" href="https://foretagare.helsingborg.se" target="_top" role="menuitem" type="button" data-uid="613a1ce729759">   
+    <span class="c-button__label">
+    
+                    <span class="c-button__label-text--reverse">
+                Företagare
+            </span>
+        
+                    
+            
+    </span>
+</a>                            <a id="613a1ce7298697.14688524" class="c-button c-button__basic c-button__basic--default c-button--sm ripple ripple--before" href="https://eservice.helsingborg.se/#" target="_top" role="menuitem" type="button" data-uid="613a1ce72988b">   
+    <span class="c-button__label">
+    
+                    <span class="c-button__label-text--reverse">
+                E-tjänster och blanketter
+            </span>
+        
+                    
+            
+    </span>
+</a>                            <a id="613a1ce72998e5.50387034" class="c-button c-button__basic c-button__basic--default c-button--sm ripple ripple--before" href="http://www.visithelsingborg.com/" target="_top" role="menuitem" type="button" data-uid="613a1ce7299b0">   
+    <span class="c-button__label">
+    
+                    <span class="c-button__label-text--reverse">
+                Besökare
+            </span>
+        
+                    
+            
+    </span>
+</a>
+</div>    </nav>
+
+                
+                <!-- form.blade.php -->
+<form id="header-search-form" class="c-form u-print-display--none u-margin__left--2 u-display--flex@lg u-display--flex@xl u-display--none@xs u-display--none@sm u-display--none@md" data-uid="613a1ce72a509" method="get" action="https://helsingborg.se">
+    <!-- group.blade.php -->
+<div class="c-group u-margin--auto c-group--horizontal">
+    <!-- field.blade.php -->
+
+<div id="header-search-form--field" class="c-field u-flex-grow--1 u-box-shadow--1 u-rounded__left--8 u-overflow--hidden c-field__text c-field--icon c-field--sm c-field--radius-sm">
+
+            <!-- icon.blade.php -->
+    <i id="613a1ce72a067" class="c-icon c-icon--size-sm material-icons" translate="no" role="img" data-uid="613a1ce72a05a">
+                    search
+            </i>
+    
+    <input id="input_header-search-form--field"
+           value=""
+           type="search" name="s" required="" aria-label="Vad letar du efter? " data-uid="613a1ce729f4c"
+                      placeholder="Sök"
+    />
+    <label class="c-field__text--placeholder">
+        Sök
+    </label>
+
+    <div id="error_input_header-search-form--field_message" class="c-field__input-invalid-message">
+        <!-- icon.blade.php -->
+    <i id="613a1ce72a170" class="c-icon c-icon--size-sm material-icons" translate="no" role="img" data-uid="613a1ce72a163">
+                    error
+            </i>
+        <span class="errorText"></span>
+    </div>
+</div>
+
+        <button id="613a1ce72a2583.18669217" class="c-button u-rounded__right--8 c-button__filled c-button__filled--default c-button--sm ripple ripple--before" href="" target="_top" id="header-search-form--submit" type="submit" aria-pressed="false" data-uid="613a1ce72a27e">   
+    <span class="c-button__label">
+    
+                    <span class="c-button__label-text">
+                Sök
+            </span>
+        
+                    
+            
+    </span>
+</button>
+</div>
+</form>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- form.blade.php -->
+<form id="mobile-search-form" class="c-form u-color__bg--light u-display--none@lg u-print-display--none" data-uid="613a1ce72ab92" method="get" action="https://helsingborg.se">
+    <div class="o-container u-padding__y--1">
+    <div class="o-grid o-grid--no-gutter o-grid--no-margin">
+      <div class="o-grid-12">
+        <!-- group.blade.php -->
+<div class="c-group u-margin--auto c-group--horizontal">
+    <!-- field.blade.php -->
+
+<div id="mobile-search-form--field" class="c-field u-flex-grow--1 u-box-shadow--none u-overflow--hidden c-field__text c-field--icon c-field--sm c-field--radius-sm">
+
+            <!-- icon.blade.php -->
+    <i id="613a1ce72a7c1" class="c-icon c-icon--size-sm material-icons" translate="no" role="img" data-uid="613a1ce72a7b3">
+                    search
+            </i>
+    
+    <input id="input_mobile-search-form--field"
+           value=""
+           type="search" name="s" required="" aria-label="" data-uid="613a1ce72a6bd"
+                      placeholder="Sök"
+    />
+    <label class="c-field__text--placeholder">
+        Sök
+    </label>
+
+    <div id="error_input_mobile-search-form--field_message" class="c-field__input-invalid-message">
+        <!-- icon.blade.php -->
+    <i id="613a1ce72a8ba" class="c-icon c-icon--size-sm material-icons" translate="no" role="img" data-uid="613a1ce72a8ae">
+                    error
+            </i>
+        <span class="errorText"></span>
+    </div>
+</div>
+
+            <button id="613a1ce72a9916.28119724" class="c-button u-box-shadow--none c-button__filled c-button__filled--default c-button--sm ripple ripple--before" href="" target="_top" id="header-search-form--submit" type="submit" aria-pressed="false" data-uid="613a1ce72a9b6">   
+    <span class="c-button__label">
+    
+                    <span class="c-button__label-text">
+                Sök
+            </span>
+        
+                    
+            
+    </span>
+</button>
+</div>      </div>
+    </div>
+  </div>
+</form>
+
+        
+        
+                    <div class="c-header__menu c-header__menu--secondary u-padding--05 u-display--none@xs
+                        u-display--none@sm u-display--none@md u-print-display--none">
+            <div class="o-container">
+                <nav role="navigation" aria-label="Huvudmeny">
+                    <!-- nav.blade.php -->
+ 
+    <ul id="613a1ce72aca0" class="c-nav u-flex-wrap--no-wrap u-justify-content--space-between c-nav--depth-0 unlist c-nav--horizontal" aria-orientation="horizontal" js-resize-by-children="1" js-keep-in-viewport-after-resize="1" data-uid="613a1ce72ac91" role="menu">
+                    <li 
+                id="6" class="c-nav__item "
+        
+                
+                
+                role="menuitem"
+                aria-labelledby="613a1ce72aca0-0__label"
+            >
+                
+                <a  id="613a1ce72aca0-0__label"
+                    class="c-nav__link" 
+                    href="arbete.html" 
+                    aria-label="Arbete" 
+                >
+
+                    
+                    <span class="c-nav__text">Arbete</span>
+                </a>
+
+                            </li>
+                    <li 
+                id="186" class="c-nav__item "
+        
+                
+                
+                role="menuitem"
+                aria-labelledby="613a1ce72aca0-1__label"
+            >
+                
+                <a  id="613a1ce72aca0-1__label"
+                    class="c-nav__link" 
+                    href="bo.html" 
+                    aria-label="Bo, bygga och miljö" 
+                >
+
+                    
+                    <span class="c-nav__text">Bo, bygga och miljö</span>
+                </a>
+
+                            </li>
+                    <li 
+                id="1410" class="c-nav__item "
+        
+                
+                
+                role="menuitem"
+                aria-labelledby="613a1ce72aca0-2__label"
+            >
+                
+                <a  id="613a1ce72aca0-2__label"
+                    class="c-nav__link" 
+                    href="fou.html" 
+                    aria-label="Förskola och utbildning" 
+                >
+
+                    
+                    <span class="c-nav__text">Förskola och utbildning</span>
+                </a>
+
+                            </li>
+                    <li 
+                id="2555" class="c-nav__item "
+        
+                
+                
+                role="menuitem"
+                aria-labelledby="613a1ce72aca0-3__label"
+            >
+                
+                <a  id="613a1ce72aca0-3__label"
+                    class="c-nav__link" 
+                    href="https://helsingborg.se/kommun-och-politik/" 
+                    aria-label="Kommun och politik" 
+                >
+
+                    
+                    <span class="c-nav__text">Kommun och politik</span>
+                </a>
+
+                            </li>
+                    <li 
+                id="5220" class="c-nav__item "
+        
+                
+                
+                role="menuitem"
+                aria-labelledby="613a1ce72aca0-4__label"
+            >
+                
+                <a  id="613a1ce72aca0-4__label"
+                    class="c-nav__link" 
+                    href="oos.html" 
+                    aria-label="Omsorg och stöd" 
+                >
+
+                    
+                    <span class="c-nav__text">Omsorg och stöd</span>
+                </a>
+
+                            </li>
+                    <li 
+                id="3334" class="c-nav__item is-current is-open has-fetched"
+        
+                
+                
+                role="menuitem"
+                aria-labelledby="613a1ce72aca0-5__label"
+            >
+                
+                <a  id="613a1ce72aca0-5__label"
+                    class="c-nav__link" 
+                    href="tos.html" 
+                    aria-label="Trafik och stadsplanering" 
+                >
+
+                    
+                    <span class="c-nav__text">Trafik och stadsplanering</span>
+                </a>
+
+                            </li>
+                    <li 
+                id="4027" class="c-nav__item "
+        
+                
+                
+                role="menuitem"
+                aria-labelledby="613a1ce72aca0-6__label"
+            >
+                
+                <a  id="613a1ce72aca0-6__label"
+                    class="c-nav__link" 
+                    href="uog.html" 
+                    aria-label="Uppleva och göra" 
+                >
+
+                    
+                    <span class="c-nav__text">Uppleva och göra</span>
+                </a>
+
+                            </li>
+            </ul>
+                </nav>
+            </div>
+        </div>
+        
+        
+    
+        <div class="c-drawer c-drawer--right c-drawer--primary js-drawer u-display--none@lg c-drawer--monotone" data-js-toggle-item="js-drawer">
+    <div class="c-drawer__header">
+        <button class="hamburger hamburger--drawer hamburger--stacked@sm hamburger--reverse@md hamburger--slider is-active js-close-drawer" type="button"
+        aria-label="Menu" aria-controls="navigation">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+            <span class="hamburger-label">
+                Stäng
+            </span>
+        </button>
+    </div>
+
+    <div class="c-drawer__body">
+        <!-- nav.blade.php -->
+ 
+    <ul id="613a1ce72af4c" class="c-nav c-nav--drawer c-nav--dark site-nav-mobile__primary c-nav--depth-0 unlist c-nav--vertical" aria-orientation="vertical" data-uid="613a1ce72af3e" role="menu">
+                    <li 
+                id="6" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=6&viewPath=partials.navigation.mobile&identifier=mobile"
+                role="menuitem"
+                aria-labelledby="613a1ce72af4c-0__label"
+            >
+                
+                <a  id="613a1ce72af4c-0__label"
+                    class="c-nav__link" 
+                    href="arbete.html" 
+                    aria-label="Arbete" 
+                >
+
+                    
+                    <span class="c-nav__text">Arbete</span>
+                </a>
+
+                                                            <button id="613a1ce72b11d3.64330560" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72b144">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72b28f" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72b280">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72b053" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72b045">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="186" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=186&viewPath=partials.navigation.mobile&identifier=mobile"
+                role="menuitem"
+                aria-labelledby="613a1ce72af4c-1__label"
+            >
+                
+                <a  id="613a1ce72af4c-1__label"
+                    class="c-nav__link" 
+                    href="bo.html" 
+                    aria-label="Bo, bygga och miljö" 
+                >
+
+                    
+                    <span class="c-nav__text">Bo, bygga och miljö</span>
+                </a>
+
+                                                            <button id="613a1ce72b4b30.67177605" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72b4da">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72b5e6" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72b5d9">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72b3e7" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72b3da">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="1410" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=1410&viewPath=partials.navigation.mobile&identifier=mobile"
+                role="menuitem"
+                aria-labelledby="613a1ce72af4c-2__label"
+            >
+                
+                <a  id="613a1ce72af4c-2__label"
+                    class="c-nav__link" 
+                    href="fou.html" 
+                    aria-label="Förskola och utbildning" 
+                >
+
+                    
+                    <span class="c-nav__text">Förskola och utbildning</span>
+                </a>
+
+                                                            <button id="613a1ce72b7bd0.79944046" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72b7e2">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72b8ea" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72b8dd">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72b701" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72b6f4">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="2555" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=2555&viewPath=partials.navigation.mobile&identifier=mobile"
+                role="menuitem"
+                aria-labelledby="613a1ce72af4c-3__label"
+            >
+                
+                <a  id="613a1ce72af4c-3__label"
+                    class="c-nav__link" 
+                    href="https://helsingborg.se/kommun-och-politik/" 
+                    aria-label="Kommun och politik" 
+                >
+
+                    
+                    <span class="c-nav__text">Kommun och politik</span>
+                </a>
+
+                                                            <button id="613a1ce72baea9.61927725" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72bb0f">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72bc18" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72bc0b">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72ba21" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72ba10">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="5220" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=5220&viewPath=partials.navigation.mobile&identifier=mobile"
+                role="menuitem"
+                aria-labelledby="613a1ce72af4c-4__label"
+            >
+                
+                <a  id="613a1ce72af4c-4__label"
+                    class="c-nav__link" 
+                    href="oos.html" 
+                    aria-label="Omsorg och stöd" 
+                >
+
+                    
+                    <span class="c-nav__text">Omsorg och stöd</span>
+                </a>
+
+                                                            <button id="613a1ce72be2a4.46034838" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72be50">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72bf67" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72bf59">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72bd66" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72bd58">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3334" class="c-nav__item is-current is-open has-fetched"
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3334&viewPath=partials.navigation.mobile&identifier=mobile"
+                role="menuitem"
+                aria-labelledby="613a1ce72af4c-5__label"
+            >
+                
+                <a  id="613a1ce72af4c-5__label"
+                    class="c-nav__link" 
+                    href="tos.html" 
+                    aria-label="Trafik och stadsplanering" 
+                >
+
+                    
+                    <span class="c-nav__text">Trafik och stadsplanering</span>
+                </a>
+
+                                                            <button id="613a1ce72c1478.82505036" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="true" data-uid="613a1ce72c16b">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72c2d3" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72c2c1">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72c08a" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72c07d">
+</div>
+            
+    </span>
+</button>                    
+                     
+                        <!-- nav.blade.php -->
+ 
+    <ul id="613a1ce72c442" class="c-nav c-nav--depth-1 unlist c-nav--vertical" aria-orientation="vertical" data-uid="613a1ce72c42e" role="menu">
+                    <li 
+                id="3336" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3336&viewPath=partials.navigation.mobile&identifier=mobile"
+                role="menuitem"
+                aria-labelledby="613a1ce72c442-0__label"
+            >
+                
+                <a  id="613a1ce72c442-0__label"
+                    class="c-nav__link" 
+                    href="tos.htmlbiltrafik/" 
+                    aria-label="Biltrafik" 
+                >
+
+                    
+                    <span class="c-nav__text">Biltrafik</span>
+                </a>
+
+                                                            <button id="613a1ce72c6899.74855326" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72c6b0">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72c7c1" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72c7b4">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72c5b8" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72c5aa">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3347" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3347&viewPath=partials.navigation.mobile&identifier=mobile"
+                role="menuitem"
+                aria-labelledby="613a1ce72c442-1__label"
+            >
+                
+                <a  id="613a1ce72c442-1__label"
+                    class="c-nav__link" 
+                    href="tos.htmlbuss-bat-och-tag/" 
+                    aria-label="Buss, båt och tåg" 
+                >
+
+                    
+                    <span class="c-nav__text">Buss, båt och tåg</span>
+                </a>
+
+                                                            <button id="613a1ce72c9d51.70667072" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72c9fa">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72cb07" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72caf9">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72c911" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72c903">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3355" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3355&viewPath=partials.navigation.mobile&identifier=mobile"
+                role="menuitem"
+                aria-labelledby="613a1ce72c442-2__label"
+            >
+                
+                <a  id="613a1ce72c442-2__label"
+                    class="c-nav__link" 
+                    href="tos.htmlcykling/" 
+                    aria-label="Cykling" 
+                >
+
+                    
+                    <span class="c-nav__text">Cykling</span>
+                </a>
+
+                                                            <button id="613a1ce72cd156.47131748" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72cd3b">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72ce44" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72ce37">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72cc2c" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72cc1f">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3432" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3432&viewPath=partials.navigation.mobile&identifier=mobile"
+                role="menuitem"
+                aria-labelledby="613a1ce72c442-3__label"
+            >
+                
+                <a  id="613a1ce72c442-3__label"
+                    class="c-nav__link" 
+                    href="tos.htmlgator-och-trottoarer/" 
+                    aria-label="Gator, vägar och trottoarer" 
+                >
+
+                    
+                    <span class="c-nav__text">Gator, vägar och trottoarer</span>
+                </a>
+
+                                                            <button id="613a1ce72d0171.59654897" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72d03b">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72d143" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72d136">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72cf5c" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72cf4f">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3528" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3528&viewPath=partials.navigation.mobile&identifier=mobile"
+                role="menuitem"
+                aria-labelledby="613a1ce72c442-4__label"
+            >
+                
+                <a  id="613a1ce72c442-4__label"
+                    class="c-nav__link" 
+                    href="tos.htmlparkering/" 
+                    aria-label="Parkering" 
+                >
+
+                    
+                    <span class="c-nav__text">Parkering</span>
+                </a>
+
+                                                            <button id="613a1ce72d37d2.33363645" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72d3a2">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72d4ae" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72d4a1">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72d2ba" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72d2ac">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3638" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3638&viewPath=partials.navigation.mobile&identifier=mobile"
+                role="menuitem"
+                aria-labelledby="613a1ce72c442-5__label"
+            >
+                
+                <a  id="613a1ce72c442-5__label"
+                    class="c-nav__link" 
+                    href="tos.htmlplanering-och-utveckling/" 
+                    aria-label="Planering och utveckling" 
+                >
+
+                    
+                    <span class="c-nav__text">Planering och utveckling</span>
+                </a>
+
+                                                            <button id="613a1ce72d68b7.52602642" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72d6b0">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72d7b9" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72d7ac">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72d5cf" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72d5c2">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3954" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3954&viewPath=partials.navigation.mobile&identifier=mobile"
+                role="menuitem"
+                aria-labelledby="613a1ce72c442-6__label"
+            >
+                
+                <a  id="613a1ce72c442-6__label"
+                    class="c-nav__link" 
+                    href="tos.htmlrenhallning-och-snorojning/" 
+                    aria-label="Renhållning och snöröjning" 
+                >
+
+                    
+                    <span class="c-nav__text">Renhållning och snöröjning</span>
+                </a>
+
+                                                            <button id="613a1ce72d9a70.81884649" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72d9cb">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72dad4" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72dac7">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72d8eb" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72d8de">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="5140" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=5140&viewPath=partials.navigation.mobile&identifier=mobile"
+                role="menuitem"
+                aria-labelledby="613a1ce72c442-7__label"
+            >
+                
+                <a  id="613a1ce72c442-7__label"
+                    class="c-nav__link" 
+                    href="tos.htmlstadsutvecklingsprojekt/" 
+                    aria-label="Stadsutvecklingsprojekt" 
+                >
+
+                    
+                    <span class="c-nav__text">Stadsutvecklingsprojekt</span>
+                </a>
+
+                                                            <button id="613a1ce72dce33.71551417" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72dd08">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72de11" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72de04">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72dc05" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72dbf1">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3993" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3993&viewPath=partials.navigation.mobile&identifier=mobile"
+                role="menuitem"
+                aria-labelledby="613a1ce72c442-8__label"
+            >
+                
+                <a  id="613a1ce72c442-8__label"
+                    class="c-nav__link" 
+                    href="tos.htmltrafik-och-byggprojekt/" 
+                    aria-label="Trafik- och byggprojekt" 
+                >
+
+                    
+                    <span class="c-nav__text">Trafik- och byggprojekt</span>
+                </a>
+
+                            </li>
+            </ul>
+                                                </li>
+                    <li 
+                id="4027" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=4027&viewPath=partials.navigation.mobile&identifier=mobile"
+                role="menuitem"
+                aria-labelledby="613a1ce72af4c-6__label"
+            >
+                
+                <a  id="613a1ce72af4c-6__label"
+                    class="c-nav__link" 
+                    href="uog.html" 
+                    aria-label="Uppleva och göra" 
+                >
+
+                    
+                    <span class="c-nav__text">Uppleva och göra</span>
+                </a>
+
+                                                            <button id="613a1ce72e0251.95861326" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72e04a">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72e17b" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72e16d">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72df67" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72df5a">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+            </ul>
+    <!-- nav.blade.php -->
+ 
+    <ul id="613a1ce72e2de" class="c-nav c-nav--drawer c-nav--dark site-nav-mobile__secondary c-nav--depth-0 unlist c-nav--vertical" aria-orientation="vertical" data-uid="613a1ce72e2d0" role="menu">
+                    <li 
+                id="3336" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3336&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce72e2de-0__label"
+            >
+                
+                <a  id="613a1ce72e2de-0__label"
+                    class="c-nav__link" 
+                    href="tos.htmlbiltrafik/" 
+                    aria-label="Biltrafik" 
+                >
+
+                    
+                    <span class="c-nav__text">Biltrafik</span>
+                </a>
+
+                                                            <button id="613a1ce72e48f5.29797147" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72e4b5">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72e5cd" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72e5bf">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72e3d1" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72e3c4">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3347" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3347&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce72e2de-1__label"
+            >
+                
+                <a  id="613a1ce72e2de-1__label"
+                    class="c-nav__link" 
+                    href="tos.htmlbuss-bat-och-tag/" 
+                    aria-label="Buss, båt och tåg" 
+                >
+
+                    
+                    <span class="c-nav__text">Buss, båt och tåg</span>
+                </a>
+
+                                                            <button id="613a1ce72e7a74.39612343" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72e7cc">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72e8d4" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72e8c7">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72e6ec" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72e6de">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3355" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3355&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce72e2de-2__label"
+            >
+                
+                <a  id="613a1ce72e2de-2__label"
+                    class="c-nav__link" 
+                    href="tos.htmlcykling/" 
+                    aria-label="Cykling" 
+                >
+
+                    
+                    <span class="c-nav__text">Cykling</span>
+                </a>
+
+                                                            <button id="613a1ce72eaa63.30585787" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72eacb">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72ebd2" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72ebc5">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72e9eb" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72e9de">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3432" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3432&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce72e2de-3__label"
+            >
+                
+                <a  id="613a1ce72e2de-3__label"
+                    class="c-nav__link" 
+                    href="tos.htmlgator-och-trottoarer/" 
+                    aria-label="Gator, vägar och trottoarer" 
+                >
+
+                    
+                    <span class="c-nav__text">Gator, vägar och trottoarer</span>
+                </a>
+
+                                                            <button id="613a1ce72eda02.31330943" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72edc4">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72eeca" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72eebd">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72ece8" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72ecdb">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3528" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3528&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce72e2de-4__label"
+            >
+                
+                <a  id="613a1ce72e2de-4__label"
+                    class="c-nav__link" 
+                    href="tos.htmlparkering/" 
+                    aria-label="Parkering" 
+                >
+
+                    
+                    <span class="c-nav__text">Parkering</span>
+                </a>
+
+                                                            <button id="613a1ce72f0959.21451781" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72f0b9">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72f1fd" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72f1ef">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72efdc" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72efcf">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3638" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3638&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce72e2de-5__label"
+            >
+                
+                <a  id="613a1ce72e2de-5__label"
+                    class="c-nav__link" 
+                    href="tos.htmlplanering-och-utveckling/" 
+                    aria-label="Planering och utveckling" 
+                >
+
+                    
+                    <span class="c-nav__text">Planering och utveckling</span>
+                </a>
+
+                                                            <button id="613a1ce72f3e55.29696742" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72f409">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72f511" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72f505">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72f325" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72f318">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3954" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3954&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce72e2de-6__label"
+            >
+                
+                <a  id="613a1ce72e2de-6__label"
+                    class="c-nav__link" 
+                    href="tos.htmlrenhallning-och-snorojning/" 
+                    aria-label="Renhållning och snöröjning" 
+                >
+
+                    
+                    <span class="c-nav__text">Renhållning och snöröjning</span>
+                </a>
+
+                                                            <button id="613a1ce72f6e77.06284047" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72f70b">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72f812" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72f805">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72f62a" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72f61c">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="5140" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=5140&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce72e2de-7__label"
+            >
+                
+                <a  id="613a1ce72e2de-7__label"
+                    class="c-nav__link" 
+                    href="tos.htmlstadsutvecklingsprojekt/" 
+                    aria-label="Stadsutvecklingsprojekt" 
+                >
+
+                    
+                    <span class="c-nav__text">Stadsutvecklingsprojekt</span>
+                </a>
+
+                                                            <button id="613a1ce72f9de6.72690563" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce72fa03">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce72fb08" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce72fafb">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce72f926" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce72f919">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3993" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3993&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce72e2de-8__label"
+            >
+                
+                <a  id="613a1ce72e2de-8__label"
+                    class="c-nav__link" 
+                    href="tos.htmltrafik-och-byggprojekt/" 
+                    aria-label="Trafik- och byggprojekt" 
+                >
+
+                    
+                    <span class="c-nav__text">Trafik- och byggprojekt</span>
+                </a>
+
+                            </li>
+            </ul>
+    </div>
+
+            <div class="c-drawer__footer u-width--100">
+                            <a id="613a1ce72fdb2" class="c-link u-margin__right--2" target="_top" href="https://foretagare.helsingborg.se" role="link" data-uid="613a1ce72fda1">
+        <!-- typography.blade.php -->
+<span id="613a1ce72fc9d" class="c-typography c-typography__variant--meta" data-uid="613a1ce72fc90">
+    Företagare
+</span>
+    </a>
+                            <a id="613a1ce72ffec" class="c-link u-margin__right--2" target="_top" href="https://eservice.helsingborg.se/#" role="link" data-uid="613a1ce72ffdd">
+        <!-- typography.blade.php -->
+<span id="613a1ce72fed4" class="c-typography c-typography__variant--meta" data-uid="613a1ce72fec5">
+    E-tjänster och blanketter
+</span>
+    </a>
+                            <a id="613a1ce730249" class="c-link u-margin__right--2" target="_top" href="http://www.visithelsingborg.com/" role="link" data-uid="613a1ce73023b">
+        <!-- typography.blade.php -->
+<span id="613a1ce730154" class="c-typography c-typography__variant--meta" data-uid="613a1ce730147">
+    Besökare
+</span>
+    </a>
+                    </div>
+    </div>
+<div class="drawer-overlay js-close-drawer u-display--none@lg"></div>
+    
+</header>
+<div id="sidebar-slider-area--container" class="o-container o-container--fullwidth u-print-display--none">
+            </div>
+
+                        
+
+        
+        
+        
+        
+        
+        <main>
+                            <div class="o-container">
+
+                                            <div class="o-grid o-grid--no-margin u-print-display--none">
+                            <div class="o-grid-12">
+                                    <div class="nav-helper">
+  <!-- breadcrumb.blade.php -->
+<nav id="613a1ce6d7622" class="c-breadcrumb" aria-label="Breadcrumb" data-uid="613a1ce6d760e">
+  <ol class="c-breadcrumb__list unlist">
+     
+      <li data-level="1" class="c-breadcrumb__item c-breadcrumb__item_0 c-breadcrumb__item_depth-1">
+        
+                  <!-- icon.blade.php -->
+    <i id="613a1ce6d7874" class="c-icon c-icon--size-inherit material-icons" translate="no" role="img" data-uid="613a1ce6d7864">
+                    home
+            </i>
+          
+         
+          <a class="c-breadcrumb__link" href="https://helsingborg.se">
+            <span class="c-breadcrumb__label">
+               Hem
+            </span>
+          </a>
+        
+      </li>
+     
+      <li data-level="1" class="c-breadcrumb__item c-breadcrumb__item_1 c-breadcrumb__item_depth-1">
+        
+                  <!-- icon.blade.php -->
+    <i id="613a1ce6d79a3" class="c-icon c-icon--size-inherit material-icons" translate="no" role="img" data-uid="613a1ce6d7994">
+                    chevron_right
+            </i>
+          
+         
+          <span class="c-breadcrumb__label" aria-current="page">
+            Trafik och stadsplanering
+          </span>
+        
+      </li>
+      </ol>
+</nav>
+  <ul class="nav-accessibility nav-horizontal u-print-display--none
+				 unlist u-display--none@xs u-display--none@sm u-print-display--none"
+                role="menubar">
+		 
+			<li role="menuitem">
+				<!-- icon.blade.php -->
+    <i id="613a1ce6d7dd1" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce6d7dc2">
+                    text_fields
+            </i>
+				<a id="613a1ce6d7ff8" class="c-link" target="_top" href="https://helsingborg.se/trafik-och-stadsplanering?readable=1" onClick="" role="link" data-uid="613a1ce6d7fe9">
+        Lättläst
+    </a>
+			</li>
+			</ul>
+</div>                            </div>
+                        </div>
+                    
+                    
+                    <!--  Main content padder -->
+                    <div class="u-padding__x--0@md  u-padding__x--0@lg">
+                        <div class="o-grid o-grid--nowrap@lg o-grid--nowrap@md">
+                                                            <div class="o-grid-12 o-grid-3@md  o-order-2 o-order-1@md u-print-display--none">
+                                        
+         
+            <!-- nav.blade.php -->
+ 
+    <ul id="613a1ce6d8409" class="c-nav c-nav--sidebar c-nav--bordered u-display--none@xs u-display--none@sm u-print-display--none u-margin__bottom--4 c-nav--depth-0 unlist c-nav--vertical" aria-orientation="vertical" data-uid="613a1ce6d83fb" role="menu">
+                    <li 
+                id="3336" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3336&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce6d8409-0__label"
+            >
+                
+                <a  id="613a1ce6d8409-0__label"
+                    class="c-nav__link" 
+                    href="tos.htmlbiltrafik/" 
+                    aria-label="Biltrafik" 
+                >
+
+                    
+                    <span class="c-nav__text">Biltrafik</span>
+                </a>
+
+                                                            <button id="613a1ce6d87dc2.39870631" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce6d8813">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce6d8983" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce6d8969">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce6d85f0" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce6d85e1">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3347" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3347&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce6d8409-1__label"
+            >
+                
+                <a  id="613a1ce6d8409-1__label"
+                    class="c-nav__link" 
+                    href="tos.htmlbuss-bat-och-tag/" 
+                    aria-label="Buss, båt och tåg" 
+                >
+
+                    
+                    <span class="c-nav__text">Buss, båt och tåg</span>
+                </a>
+
+                                                            <button id="613a1ce6d8bad0.53749434" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce6d8bd5">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce6d8d02" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce6d8cf5">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce6d8ae6" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce6d8ad9">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3355" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3355&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce6d8409-2__label"
+            >
+                
+                <a  id="613a1ce6d8409-2__label"
+                    class="c-nav__link" 
+                    href="tos.htmlcykling/" 
+                    aria-label="Cykling" 
+                >
+
+                    
+                    <span class="c-nav__text">Cykling</span>
+                </a>
+
+                                                            <button id="613a1ce6d8edf2.34408216" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce6d8f04">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce6d9032" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce6d9025">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce6d8e23" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce6d8e16">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3432" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3432&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce6d8409-3__label"
+            >
+                
+                <a  id="613a1ce6d8409-3__label"
+                    class="c-nav__link" 
+                    href="tos.htmlgator-och-trottoarer/" 
+                    aria-label="Gator, vägar och trottoarer" 
+                >
+
+                    
+                    <span class="c-nav__text">Gator, vägar och trottoarer</span>
+                </a>
+
+                                                            <button id="613a1ce6d92088.07572455" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce6d922d">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce6d9335" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce6d9329">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce6d914e" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce6d9142">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3528" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3528&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce6d8409-4__label"
+            >
+                
+                <a  id="613a1ce6d8409-4__label"
+                    class="c-nav__link" 
+                    href="tos.htmlparkering/" 
+                    aria-label="Parkering" 
+                >
+
+                    
+                    <span class="c-nav__text">Parkering</span>
+                </a>
+
+                                                            <button id="613a1ce6d95230.60585531" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce6d9548">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce6d9668" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce6d965b">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce6d9468" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce6d945a">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3638" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3638&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce6d8409-5__label"
+            >
+                
+                <a  id="613a1ce6d8409-5__label"
+                    class="c-nav__link" 
+                    href="tos.htmlplanering-och-utveckling/" 
+                    aria-label="Planering och utveckling" 
+                >
+
+                    
+                    <span class="c-nav__text">Planering och utveckling</span>
+                </a>
+
+                                                            <button id="613a1ce6d983f5.95193955" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce6d9864">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce6d996b" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce6d995f">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce6d9784" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce6d9777">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3954" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3954&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce6d8409-6__label"
+            >
+                
+                <a  id="613a1ce6d8409-6__label"
+                    class="c-nav__link" 
+                    href="tos.htmlrenhallning-och-snorojning/" 
+                    aria-label="Renhållning och snöröjning" 
+                >
+
+                    
+                    <span class="c-nav__text">Renhållning och snöröjning</span>
+                </a>
+
+                                                            <button id="613a1ce6d9b4b6.33353016" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce6d9b6f">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce6d9c76" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce6d9c69">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce6d9a90" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce6d9a83">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="5140" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=5140&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce6d8409-7__label"
+            >
+                
+                <a  id="613a1ce6d8409-7__label"
+                    class="c-nav__link" 
+                    href="tos.htmlstadsutvecklingsprojekt/" 
+                    aria-label="Stadsutvecklingsprojekt" 
+                >
+
+                    
+                    <span class="c-nav__text">Stadsutvecklingsprojekt</span>
+                </a>
+
+                                                            <button id="613a1ce6d9e452.75900484" class="c-button c-nav__toggle js-toggle-children c-button__basic c-button__basic--default c-button__icon-size--lg ripple ripple--before c-button--icon-only" href="" target="_top" js-toggle-trigger="" js-toggle-item="" type="button" aria-pressed="false" data-uid="613a1ce6d9e71">   
+    <span class="c-button__label">
+    
+                    <!-- icon.blade.php -->
+    <i id="613a1ce6d9ff8" class="c-icon c-icon--size-lg material-icons" translate="no" role="img" data-uid="613a1ce6d9fe9">
+                    expand_more
+            </i>
+        
+                    <!-- loader.blade.php -->
+
+<div id="613a1ce6d9d8c" class="c-loader c-loader__circular--color--black c-loader__circular c-loader__circular--sm" aria-busy="true" role="progressbar" data-uid="613a1ce6d9d7f">
+</div>
+            
+    </span>
+</button>                    
+                                                </li>
+                    <li 
+                id="3993" class="c-nav__item "
+        
+                
+                data-fetch-url="https://helsingborg.se/wp-json/municipio/v1/navigation/children/render?pageId=3993&viewPath=partials.navigation.sidebar&identifier=sidebar"
+                role="menuitem"
+                aria-labelledby="613a1ce6d8409-8__label"
+            >
+                
+                <a  id="613a1ce6d8409-8__label"
+                    class="c-nav__link" 
+                    href="tos.htmltrafik-och-byggprojekt/" 
+                    aria-label="Trafik- och byggprojekt" 
+                >
+
+                    
+                    <span class="c-nav__text">Trafik- och byggprojekt</span>
+                </a>
+
+                            </li>
+            </ul>
+        
+                                                    </div>
+                                                
+                            <div class="o-grid-12 o-grid-auto@md o-order-1 o-order-2@md">
+                                
+    
+
+    
+            <article id="article" class="c-article c-article--readable-width s-article u-clearfix">
+    <!-- Title -->
+    <!-- typography.blade.php -->
+<h1 id="613a1ce6da62c" class="c-typography c-typography__variant--p" data-uid="613a1ce6da61e">
+    Trafik och stadsplanering
+</h1>
+    <!-- Blog style author signature -->
+    
+    <!-- Feature Image -->
+    
+	<!-- Content -->
+	<p class="lead">Här kan du läsa om hur vi utvecklar, bygger och underhåller vår stad. Du hittar också information om vägarbeten och hur vi sköter om trafik, gator och torg.</p><p><a href="https://www.skanetrafiken.se/">Information om kollektivtrafiken hittar du på Skånetrafikens webbplats</a>.</p>
+
+
+    <!-- Comments -->
+		
+</article>
+
+    
+    <div id="sidebar-content-area" class="sidebar-content-area o-grid">
+            <div id="mod-index-52070" class="modularity-mod-index modularity-mod-index-52070 "><div class="o-grid">
+            <div class="o-grid-4@md">
+            <!-- card.blade.php -->
+<a href="tos.htmlparkering/" id="613a1ce6e4170" class="c-card u-height--100 u-height-100 c-card--default c-card--action c-card--ratio-4-3" data-uid="613a1ce6e4163">
+    
+    <div class="c-card__image c-card__image--secondary">
+                        <div class="c-card__image-background u-ratio-16-9" alt="Parkering" style="height:initial; background-image:url('https://helsingborg.se/wp-content/uploads/2015/01/parkering_man_parkeringsautomat_1920x1080_foto_anna_olsson-400x225.jpg');"></div>
+                    </div>
+                
+                <div class="c-card__body">
+                                            <!-- typography.blade.php -->
+<h2 id="613a1ce6e3f4e" class="c-typography c-card__heading c-typography__variant--p" data-uid="613a1ce6e3f3c">
+    Parkering
+</h2>                    
+                    Här får du information om var du kan parkera i Helsingborg och hur du ansöker om olika slags parkeringstillstånd. Vi förklarar också de vanligaste parkeringsreglerna och svarar på några av de frågor kring parkering vi ofta får.  
+                    
+                </div>
+</a>        </div>
+            <div class="o-grid-4@md">
+            <!-- card.blade.php -->
+<a href="tos.htmltrafik-och-byggprojekt/" id="613a1ce6e43d2" class="c-card u-height--100 u-height-100 c-card--default c-card--action c-card--ratio-4-3" data-uid="613a1ce6e43c7">
+    
+    <div class="c-card__image c-card__image--secondary">
+                        <div class="c-card__image-background u-ratio-16-9" alt="Trafik- och byggprojekt" style="height:initial; background-image:url('https://helsingborg.se/wp-content/uploads/2015/01/doj_jarnvagsgatan_sommar2017_1920x1080_foto_beatrice_stiernstedt-400x225.jpg');"></div>
+                    </div>
+                
+                <div class="c-card__body">
+                                            <!-- typography.blade.php -->
+<h2 id="613a1ce6e42dd" class="c-typography c-card__heading c-typography__variant--p" data-uid="613a1ce6e42d0">
+    Trafik- och byggprojekt
+</h2>                    
+                    Här kan du läsa om hur vi förändrar och förnyar Helsingborg och varför vi gör det. Det handlar om vägar och gator, hur vi förbereder för nya byggnader eller bostadsområden och förbättringar i de områden som redan finns.
+
+
+                    
+                </div>
+</a>        </div>
+            <div class="o-grid-4@md">
+            <!-- card.blade.php -->
+<a href="tos.htmlplanering-och-utveckling/" id="613a1ce6e460b" class="c-card u-height--100 u-height-100 c-card--default c-card--action c-card--ratio-4-3" data-uid="613a1ce6e45ff">
+    
+    <div class="c-card__image c-card__image--secondary">
+                        <div class="c-card__image-background u-ratio-16-9" alt="Planering och utveckling" style="height:initial; background-image:url('https://helsingborg.se/wp-content/uploads/2017/05/detaljplan_flygfoto_samrad_1920x1080_foto_anna_alexander_olsson-400x225.jpg');"></div>
+                    </div>
+                
+                <div class="c-card__body">
+                                            <!-- typography.blade.php -->
+<h2 id="613a1ce6e4520" class="c-typography c-card__heading c-typography__variant--p" data-uid="613a1ce6e4513">
+    Planering och utveckling
+</h2>                    
+                    Här hittar du översiktsplaner, detaljplaner och strategiska dokument som har med stadsplanering att göra. 
+                    
+                </div>
+</a>        </div>
+            <div class="o-grid-4@md">
+            <!-- card.blade.php -->
+<a href="tos.htmlcykling/" id="613a1ce6e489e" class="c-card u-height--100 u-height-100 c-card--default c-card--action c-card--ratio-4-3" data-uid="613a1ce6e4892">
+    
+    <div class="c-card__image c-card__image--secondary">
+                        <div class="c-card__image-background u-ratio-16-9" alt="Cykling" style="height:initial; background-image:url('https://helsingborg.se/wp-content/uploads/2015/01/cyklister_centrala_helsingborg_1920x1080_foto_caroline_found-400x225.jpg');"></div>
+                    </div>
+                
+                <div class="c-card__body">
+                                            <!-- typography.blade.php -->
+<h2 id="613a1ce6e4789" class="c-typography c-card__heading c-typography__variant--p" data-uid="613a1ce6e477b">
+    Cykling
+</h2>                    
+                    Här hittar du information om att cykla i Helsingborg. Här finns vår cykelkarta med kommunens alla cykelvägar. Du kan också beställa en gratis cykelkarta och få svar på vanliga frågor.
+
+
+                    
+                </div>
+</a>        </div>
+            <div class="o-grid-4@md">
+            <!-- card.blade.php -->
+<a href="tos.htmlbuss-bat-och-tag/" id="613a1ce6e4af0" class="c-card u-height--100 u-height-100 c-card--default c-card--action c-card--ratio-4-3" data-uid="613a1ce6e4ae5">
+    
+    <div class="c-card__image c-card__image--secondary">
+                        <div class="c-card__image-background u-ratio-16-9" alt="Buss, båt och tåg" style="height:initial; background-image:url('https://helsingborg.se/wp-content/uploads/2020/03/buss-i-helsingborg-400x225.jpg');"></div>
+                    </div>
+                
+                <div class="c-card__body">
+                                            <!-- typography.blade.php -->
+<h2 id="613a1ce6e49e4" class="c-typography c-card__heading c-typography__variant--p" data-uid="613a1ce6e49d8">
+    Buss, båt och tåg
+</h2>                    
+                    Centralstationen i Helsingborg kallas Knutpunkten och därifrån går alla bussar, tåg och färjor. På flera orter i kommunen finns också pendeltågsstationer.
+
+
+                    
+                </div>
+</a>        </div>
+            <div class="o-grid-4@md">
+            <!-- card.blade.php -->
+<a href="tos.htmlrenhallning-och-snorojning/" id="613a1ce6e4d7c" class="c-card u-height--100 u-height-100 c-card--default c-card--action c-card--ratio-4-3" data-uid="613a1ce6e4d70">
+    
+    <div class="c-card__image c-card__image--secondary">
+                        <div class="c-card__image-background u-ratio-16-9" alt="Renhållning och snöröjning" style="height:initial; background-image:url('https://helsingborg.se/wp-content/uploads/2017/05/renhallning_1920x1080_foto_anna_olsson-400x225.jpg');"></div>
+                    </div>
+                
+                <div class="c-card__body">
+                                            <!-- typography.blade.php -->
+<h2 id="613a1ce6e4c88" class="c-typography c-card__heading c-typography__variant--p" data-uid="613a1ce6e4c7b">
+    Renhållning och snöröjning
+</h2>                    
+                    Här kan du få reda på när stadens gator städas. Du kan felanmäla och rapportera skräp. Du kan även få veta mer om vad du själv kan behöva göra när det är halt eller mycket snö ute.
+                    
+                </div>
+</a>        </div>
+    </div></div><div id="mod-text-52055" class="modularity-mod-text modularity-mod-text-52055 "><!-- card.blade.php -->
+<div href="" id="613a1ce6e8170" class="c-card c-card--default c-card--ratio-4-3" aria-labelledby="mod-text-52055-label" data-uid="613a1ce6e8161">
+    
+    <div class="c-card__header">
+            <!-- typography.blade.php -->
+<h4 id="mod-text-52055-label" class="c-typography c-typography__variant--p" data-uid="613a1ce6e7d52">
+    Helsingborg växer
+</h4>        </div>
+        <div class="c-card__body">
+        <p>Vi blir fler och fler helsingborgare! Därför behöver vi fler lägenheter och skolor, bättre infrastruktur – men också fler platser för avkoppling och rekreation. Just nu pågår ett hundratal små och stora byggprojekt. <a href="tos.htmlstadsutvecklingsprojekt/">Här får du en överblick av en del av det som byggs och planeras.</a></p>
+
+    </div>
+</div></div><div id="mod-posts-52071" class="modularity-mod-posts modularity-mod-posts-52071 "><!-- card.blade.php -->
+<div href="" id="613a1ce727c72" class="c-card  c-card--default c-card--ratio-4-3 c-card--panel" aria-labelledby="mod-posts-52071-label" data-uid="613a1ce727c64">
+    
+    <div class="c-card__header">
+            <!-- typography.blade.php -->
+<h4 id="mod-posts-52071-label" class="c-typography c-typography__variant--p" data-uid="613a1ce724c5c">
+    Nyheter
+</h4>        </div>
+    
+            <!-- collection.blade.php -->
+<div id="613a1ce727b00" class="c-collection c-collection--bordered c-collection--sharp-top" data-uid="613a1ce727af4">
+    
+    
+            <!-- collection__item.blade.php -->
+<a id="613a1ce724fb0" class="c-collection__item c-collection__item--action" href="https://helsingborg.se/nyheter/sa-paverkas-tagtrafiken-mellan-forslov-och-helsingborg-c-av-avstangningen-6-september-14-november/" data-uid="613a1ce724fa2">
+    
+     
+        <div class="c-collection__icon">
+            <!-- icon.blade.php -->
+    <i id="613a1ce7250d6" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce7250c7">
+                    arrow_forward
+            </i>
+        </div>
+    
+            <div class="c-collection__content">
+            <!-- typography.blade.php -->
+<h4 id="613a1ce724dcd" class="c-typography c-typography__variant--p" data-uid="613a1ce724dc0">
+    Så påverkas tågtrafiken mellan Förslöv och Helsingborg 6 september till 14 november
+</h4>
+        </div>
+    
+    
+    </a>                                                                <!-- collection__item.blade.php -->
+<a id="613a1ce7252cb" class="c-collection__item c-collection__item--action" href="https://helsingborg.se/nyheter/planavagen-och-jons-jons-vag-i-kattarp-avstangda-nar-trafikverket-byter-spar/" data-uid="613a1ce7252be">
+    
+     
+        <div class="c-collection__icon">
+            <!-- icon.blade.php -->
+    <i id="613a1ce7253a8" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce72539b">
+                    arrow_forward
+            </i>
+        </div>
+    
+            <div class="c-collection__content">
+            <!-- typography.blade.php -->
+<h4 id="613a1ce7251ef" class="c-typography c-typography__variant--p" data-uid="613a1ce7251e3">
+    Planavägen och Jöns Jons väg i Kattarp avstängda när Trafikverket byter spår
+</h4>
+        </div>
+    
+    
+    </a>                                                                <!-- collection__item.blade.php -->
+<a id="613a1ce7255a8" class="c-collection__item c-collection__item--action" href="https://helsingborg.se/nyheter/ny-tabell-for-busstrafiken-fran-15-augusti/" data-uid="613a1ce72559b">
+    
+     
+        <div class="c-collection__icon">
+            <!-- icon.blade.php -->
+    <i id="613a1ce725682" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce725675">
+                    arrow_forward
+            </i>
+        </div>
+    
+            <div class="c-collection__content">
+            <!-- typography.blade.php -->
+<h4 id="613a1ce7254ca" class="c-typography c-typography__variant--p" data-uid="613a1ce7254bc">
+    Ny tabell för busstrafiken från 15 augusti
+</h4>
+        </div>
+    
+    
+    </a>                                                                <!-- collection__item.blade.php -->
+<a id="613a1ce72585b" class="c-collection__item c-collection__item--action" href="https://helsingborg.se/nyheter/nedre-langvinkelsgatan-ar-avstangd-pa-grund-av-skador-efter-kraftiga-regn/" data-uid="613a1ce72584f">
+    
+     
+        <div class="c-collection__icon">
+            <!-- icon.blade.php -->
+    <i id="613a1ce725932" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce725925">
+                    arrow_forward
+            </i>
+        </div>
+    
+            <div class="c-collection__content">
+            <!-- typography.blade.php -->
+<h4 id="613a1ce725786" class="c-typography c-typography__variant--p" data-uid="613a1ce72577a">
+    Nedre Långvinkelsgatan är avstängd på grund av skador efter kraftiga regn
+</h4>
+        </div>
+    
+    
+    </a>                                                                <!-- collection__item.blade.php -->
+<a id="613a1ce725b06" class="c-collection__item c-collection__item--action" href="https://helsingborg.se/nyheter/tag-och-biltrafik-paverkas-under-hosten-av-trafikverkets-arbeten/" data-uid="613a1ce725af9">
+    
+     
+        <div class="c-collection__icon">
+            <!-- icon.blade.php -->
+    <i id="613a1ce725bdd" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce725bd0">
+                    arrow_forward
+            </i>
+        </div>
+    
+            <div class="c-collection__content">
+            <!-- typography.blade.php -->
+<h4 id="613a1ce725a34" class="c-typography c-typography__variant--p" data-uid="613a1ce725a28">
+    Tåg- och biltrafik påverkas under hösten av Trafikverkets arbeten
+</h4>
+        </div>
+    
+    
+    </a>                                                                <!-- collection__item.blade.php -->
+<a id="613a1ce725dc7" class="c-collection__item c-collection__item--action" href="tos.htmltrafik-och-byggprojekt/trafik-och-stadsmiljo/fardigstallande-bjorka-odakra/" data-uid="613a1ce725dba">
+    
+     
+        <div class="c-collection__icon">
+            <!-- icon.blade.php -->
+    <i id="613a1ce725e9e" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce725e91">
+                    arrow_forward
+            </i>
+        </div>
+    
+            <div class="c-collection__content">
+            <!-- typography.blade.php -->
+<h4 id="613a1ce725cf0" class="c-typography c-typography__variant--p" data-uid="613a1ce725ce4">
+    Vi gör klart gator i Björka vid Ödåkra
+</h4>
+        </div>
+    
+    
+    </a>                                                                <!-- collection__item.blade.php -->
+<a id="613a1ce72606f" class="c-collection__item c-collection__item--action" href="tos.htmltrafik-och-byggprojekt/vi-anlagger-en-ny-vatmark-pa-berga/" data-uid="613a1ce726063">
+    
+     
+        <div class="c-collection__icon">
+            <!-- icon.blade.php -->
+    <i id="613a1ce726143" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce726136">
+                    arrow_forward
+            </i>
+        </div>
+    
+            <div class="c-collection__content">
+            <!-- typography.blade.php -->
+<h4 id="613a1ce725f9f" class="c-typography c-typography__variant--p" data-uid="613a1ce725f93">
+    Vi anlägger en ny våtmark på Berga
+</h4>
+        </div>
+    
+    
+    </a>                                                                <!-- collection__item.blade.php -->
+<a id="613a1ce726315" class="c-collection__item c-collection__item--action" href="tos.htmltrafik-och-byggprojekt/trafik-och-stadsmiljo/vi-anlagger-en-ny-vatmark-vid-doshult/" data-uid="613a1ce726308">
+    
+     
+        <div class="c-collection__icon">
+            <!-- icon.blade.php -->
+    <i id="613a1ce72640d" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce726400">
+                    arrow_forward
+            </i>
+        </div>
+    
+            <div class="c-collection__content">
+            <!-- typography.blade.php -->
+<h4 id="613a1ce726242" class="c-typography c-typography__variant--p" data-uid="613a1ce726236">
+    Vi anlägger en ny våtmark vid Döshult
+</h4>
+        </div>
+    
+    
+    </a>                                                                <!-- collection__item.blade.php -->
+<a id="613a1ce7265f9" class="c-collection__item c-collection__item--action" href="https://helsingborg.se/nyheter/vi-bekampar-ogras-med-hetvatten-och-skum-av-majs-och-kokos/" data-uid="613a1ce7265ed">
+    
+     
+        <div class="c-collection__icon">
+            <!-- icon.blade.php -->
+    <i id="613a1ce7266e7" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce7266d4">
+                    arrow_forward
+            </i>
+        </div>
+    
+            <div class="c-collection__content">
+            <!-- typography.blade.php -->
+<h4 id="613a1ce726526" class="c-typography c-typography__variant--p" data-uid="613a1ce72651a">
+    Vi bekämpar ogräs med hetvatten och skum av majs och kokos
+</h4>
+        </div>
+    
+    
+    </a>                                                                <!-- collection__item.blade.php -->
+<a id="613a1ce7269aa" class="c-collection__item c-collection__item--action" href="tos.htmltrafik-och-byggprojekt/trafik-och-stadsmiljo/nytt-gang-och-cykelstrak-genom-drottninghog/" data-uid="613a1ce726997">
+    
+     
+        <div class="c-collection__icon">
+            <!-- icon.blade.php -->
+    <i id="613a1ce726ae1" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce726ad1">
+                    arrow_forward
+            </i>
+        </div>
+    
+            <div class="c-collection__content">
+            <!-- typography.blade.php -->
+<h4 id="613a1ce726869" class="c-typography c-typography__variant--p" data-uid="613a1ce726858">
+    Vi bygger ett nytt gång- och cykelstråk genom Drottninghög
+</h4>
+        </div>
+    
+    
+    </a>                                                                <!-- collection__item.blade.php -->
+<a id="613a1ce726cd7" class="c-collection__item c-collection__item--action" href="tos.htmlplanering-och-utveckling/tryggare-platser/eneborgsplatsen/" data-uid="613a1ce726cca">
+    
+     
+        <div class="c-collection__icon">
+            <!-- icon.blade.php -->
+    <i id="613a1ce726daf" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce726da2">
+                    arrow_forward
+            </i>
+        </div>
+    
+            <div class="c-collection__content">
+            <!-- typography.blade.php -->
+<h4 id="613a1ce726bff" class="c-typography c-typography__variant--p" data-uid="613a1ce726bf3">
+    Så gör vi Eneborgsplatsen finare och tryggare
+</h4>
+        </div>
+    
+    
+    </a>                                                                <!-- collection__item.blade.php -->
+<a id="613a1ce726f84" class="c-collection__item c-collection__item--action" href="https://helsingborg.se/nyheter/nu-uppgraderar-vi-till-helt-digital-parkering/" data-uid="613a1ce726f77">
+    
+     
+        <div class="c-collection__icon">
+            <!-- icon.blade.php -->
+    <i id="613a1ce727071" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce727064">
+                    arrow_forward
+            </i>
+        </div>
+    
+            <div class="c-collection__content">
+            <!-- typography.blade.php -->
+<h4 id="613a1ce726eb0" class="c-typography c-typography__variant--p" data-uid="613a1ce726ea5">
+    Nu uppgraderar vi till helt digital parkering
+</h4>
+        </div>
+    
+    
+    </a>                                                                <!-- collection__item.blade.php -->
+<a id="613a1ce727279" class="c-collection__item c-collection__item--action" href="tos.htmltrafik-och-byggprojekt/trafik-och-stadsmiljo/dockanparken-och-djungellekan-i-oceanhamnen/" data-uid="613a1ce72726c">
+    
+     
+        <div class="c-collection__icon">
+            <!-- icon.blade.php -->
+    <i id="613a1ce727361" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce727354">
+                    arrow_forward
+            </i>
+        </div>
+    
+            <div class="c-collection__content">
+            <!-- typography.blade.php -->
+<h4 id="613a1ce72718a" class="c-typography c-typography__variant--p" data-uid="613a1ce72717e">
+    Dockanparken och Djungellekan tar form i Oceanhamnen
+</h4>
+        </div>
+    
+    
+    </a>                                                                <!-- collection__item.blade.php -->
+<a id="613a1ce72757d" class="c-collection__item c-collection__item--action" href="tos.htmltrafik-och-byggprojekt/trafik-och-stadsmiljo/kopparmolleparken/" data-uid="613a1ce727570">
+    
+     
+        <div class="c-collection__icon">
+            <!-- icon.blade.php -->
+    <i id="613a1ce727652" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce727646">
+                    arrow_forward
+            </i>
+        </div>
+    
+            <div class="c-collection__content">
+            <!-- typography.blade.php -->
+<h4 id="613a1ce7274a4" class="c-typography c-typography__variant--p" data-uid="613a1ce727497">
+    Vi har rustat upp Kopparmölleparken
+</h4>
+        </div>
+    
+    
+    </a>                                                                <!-- collection__item.blade.php -->
+<a id="613a1ce727822" class="c-collection__item c-collection__item--action" href="tos.htmltrafik-och-byggprojekt/trafik-och-stadsmiljo/vi-gor-klart-gatorna-i-bostadsomrade-i-rydeback/" data-uid="613a1ce727816">
+    
+     
+        <div class="c-collection__icon">
+            <!-- icon.blade.php -->
+    <i id="613a1ce7278f6" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce7278e9">
+                    arrow_forward
+            </i>
+        </div>
+    
+            <div class="c-collection__content">
+            <!-- typography.blade.php -->
+<h4 id="613a1ce727752" class="c-typography c-typography__variant--p" data-uid="613a1ce727747">
+    Vi gör klart gatorna i bostadsområde i Rydebäck
+</h4>
+        </div>
+    
+    
+    </a>
+    </div>
+</div></div> 
+        </div>
+    
+    <div id="customer-feedback" class="customer-feedback-container c-paper c-paper--padding-3">
+    <h4 id="" class="c-typography c-typography__variant--h3">
+        <i class="c-icon c-icon--color-primary c-icon--size-inherit material-icons">
+            question_answer
+        </i>
+        Fick du hjälp av informationen på sidan?    </h4>
+
+    <p class="c-typography c-typography__variant--byline">Här kan du lämna feedback om informationen på sidan. Du får inte svar på din feedback. Har du frågor eller vill komma i kontakt med Helsingborgs stad kan du vända dig till <a href="https://helsingborg.se/kontaktcenter">Kontaktcenter</a>. Tack för att du hjälper oss att göra webbplatsen bättre.</p>
+
+    <div class="u-margin__top--3">
+                    
+            <!-- Booelan answer section -->
+            <div class="customer-feedback-answers">
+
+                <!-- Submission Error -->
+                <div class="customer-feedback-js-error u-margin__bottom--3 u-margin__top--3" style="display: none;">
+                    <div id="" class="c-notice c-notice--danger">
+                        <span class="c-notice__icon">
+                            <i id="" class="c-icon c-icon--color- c-icon--size-md material-icons">
+                                error_outline
+                            </i>
+                        </span>
+                        <span class="c-notice__message--sm">
+                            Något gick fel, var god och försök igen. Anslutningen till servern misslyckades.                        </span>
+                    </div>
+                </div>
+
+                <button rel="nofollow" class="c-button c-button__filled c-button__filled--default c-button--md u-margin__right--1" aria-pressed="false" type="button" value="yes" data-action="customer-feedback-submit-response">
+                    <span class="c-button__label">
+                        <span class="c-button__label-text">
+                            <i class="c-icon c-icon--color-primary c-icon--size-inherit material-icons">
+                                thumb_up
+                            </i>
+                            Ja                        </span>
+                    </span>
+                </button>
+
+                <button rel="nofollow" class="c-button c-button__filled c-button__filled--default c-button--md" aria-pressed="false" type="button" value="no" data-action="customer-feedback-submit-response">
+                    <span class="c-button__label">
+                        <span class="c-button__label-text">
+                            <i class="c-icon c-icon--color-primary c-icon--size-inherit material-icons">
+                                thumb_down
+                            </i>
+                            Nej                        </span>
+                    </span>
+                </button>
+
+            </div> <!-- // End boolean answer section --> 
+
+            <!-- Comment section -->
+            <div class="customer-feedback-comment" style="display: none;">
+                
+                                    
+                    <!-- Topic segment --> 
+                    <div id="customer-feedback-topics" class="customer-feedback-topics feedback-answer-no u-margin__top--4" style="display:none">
+
+                        <label class="c-typography c-typography__variant--h3">
+                            Ämne                        </label>
+
+                        <p class="c-typography typography__variant--small u-margin__top--0">
+                            Komplettera din feedback genom att välja en kategori och ange kommentar.                        </p>
+
+                                                    <div class="c-option c-option__radio">
+                                <input
+                                    id="0__customer-feedback-comment-topic"
+                                    name="customer-feedback-comment-topic"
+                                    class="c-option__radio--hidden-box" placeholder="Informationen på sidan är felaktig och behöver uppdateras"
+                                    type="radio" value="18928"
+                                    topic-description=""
+                                    feedback-capability=""
+                                >
+                                <label for="0__customer-feedback-comment-topic" class="c-option__radio--label">
+                                    <span class="c-option__radio--label-box"></span>
+                                    <span class="c-option__radio--label-text">Informationen på sidan är felaktig och behöver uppdateras</span>
+                                </label>
+                                <div class="js-error">
+
+                                </div>
+                            </div>
+                                                    <div class="c-option c-option__radio">
+                                <input
+                                    id="1__customer-feedback-comment-topic"
+                                    name="customer-feedback-comment-topic"
+                                    class="c-option__radio--hidden-box" placeholder="Jag har förslag på kompletterande information till sidan"
+                                    type="radio" value="18929"
+                                    topic-description=""
+                                    feedback-capability=""
+                                >
+                                <label for="1__customer-feedback-comment-topic" class="c-option__radio--label">
+                                    <span class="c-option__radio--label-box"></span>
+                                    <span class="c-option__radio--label-text">Jag har förslag på kompletterande information till sidan</span>
+                                </label>
+                                <div class="js-error">
+
+                                </div>
+                            </div>
+                                                    <div class="c-option c-option__radio">
+                                <input
+                                    id="2__customer-feedback-comment-topic"
+                                    name="customer-feedback-comment-topic"
+                                    class="c-option__radio--hidden-box" placeholder="Jag hittar inte den information jag söker på sidan"
+                                    type="radio" value="18930"
+                                    topic-description=""
+                                    feedback-capability=""
+                                >
+                                <label for="2__customer-feedback-comment-topic" class="c-option__radio--label">
+                                    <span class="c-option__radio--label-box"></span>
+                                    <span class="c-option__radio--label-text">Jag hittar inte den information jag söker på sidan</span>
+                                </label>
+                                <div class="js-error">
+
+                                </div>
+                            </div>
+                                                    <div class="c-option c-option__radio">
+                                <input
+                                    id="3__customer-feedback-comment-topic"
+                                    name="customer-feedback-comment-topic"
+                                    class="c-option__radio--hidden-box" placeholder="Jag upplever tekniska problem på sidan"
+                                    type="radio" value="18931"
+                                    topic-description="Till exempel länkar som inte fungerar eller som leder till fel sida, långsam laddning eller annat tekniskt problem."
+                                    feedback-capability=""
+                                >
+                                <label for="3__customer-feedback-comment-topic" class="c-option__radio--label">
+                                    <span class="c-option__radio--label-box"></span>
+                                    <span class="c-option__radio--label-text">Jag upplever tekniska problem på sidan</span>
+                                </label>
+                                <div class="js-error">
+
+                                </div>
+                            </div>
+                                                    <div class="c-option c-option__radio">
+                                <input
+                                    id="4__customer-feedback-comment-topic"
+                                    name="customer-feedback-comment-topic"
+                                    class="c-option__radio--hidden-box" placeholder="Övrigt"
+                                    type="radio" value="18932"
+                                    topic-description=""
+                                    feedback-capability="1"
+                                >
+                                <label for="4__customer-feedback-comment-topic" class="c-option__radio--label">
+                                    <span class="c-option__radio--label-box"></span>
+                                    <span class="c-option__radio--label-text">Övrigt</span>
+                                </label>
+                                <div class="js-error">
+
+                                </div>
+                            </div>
+                        
+                    </div>
+
+                
+                <div class="u-margin__top--4">
+
+                    <!-- Headings -->
+                    <label 
+                        for="customer-feedback-comment-text-1" 
+                        class="c-typography c-typography__variant--h3 feedback-answer-yes"
+                        style="display: none;">
+                        Kommentar                    </label>
+
+                    <label 
+                        for="customer-feedback-comment-text-1" 
+                        class="c-typography c-typography__variant--h3 feedback-answer-no"
+                        style="display: none;">
+                        Hur kan vi förbättra vår information?                    </label>
+                    
+                    <!-- Explainer -->
+                    <p class="c-typography c-typography__variant--byline u-margin__top--0">Observera att din kommentar blir en allmän handling som kan komma att läsas av andra.</p>
+
+                    <!-- Text input field for comments -->
+                    <div class="c-textarea">
+                        <textarea 
+                            id="customer-feedback-comment-text-1"
+                            type="textarea" 
+                            name="customer-feedback-comment-text" 
+                            placeholder="Vad vill du ge feedback på? "></textarea> 
+                        <label class="c-textarea--label">Vad vill du ge feedback på? </label>
+                    </div>
+
+                    <!-- GDPR Notice -->
+                                            <p class="c-typography c-typography__variant--meta">
+                            I det här formuläret samlar vi in personuppgifter om dig för att [det formuläret ska användas till]. Uppgifterna kommer inte att hanteras för något annat syfte, och kommer att raderas när [ärendet är avslutat]. <a href="/toppmeny/om-webbplatsen/sa-har-behandlar-vi-dina-personuppgifter/">Läs om hur Helsingborgs stad hanterar personuppgifter</a>.                        </p>
+                                    
+                </div>
+
+                <div class="customer-feedback-comment-email u-margin__top--4" style="display: none;">
+                    
+                    <!-- Email -->
+                    <label 
+                        for="customer-feedback-comment-email-1" 
+                        class="c-typography c-typography__variant--h3">
+                        E-postadress                    </label>
+
+                    <!-- Explainer -->
+                    <p class="c-typography c-typography__variant--byline u-margin__top--0">Ange din e-postadress för att få återkoppling på din feedback.</p>
+
+                    <!-- Email input -->
+                    <div class="c-field c-field__text">
+                        <input  
+                            placeholder="Ange din epostadress."
+                            type="email" 
+                            id="customer-feedback-comment-email-1"
+                            name="customer-feedback-comment-email" 
+                            value="">
+                            <label class="c-field__text--label">Ange din epostadress.</label>
+                    </div>
+
+                </div>
+
+                <div class="c-typography c-typography__variant--meta u-padding__top--2">
+                        Denna webbplats är skyddad av reCAPTCHA och Googles <a href="https://policies.google.com/privacy">Integritetspolicy</a> och <a href="https://policies.google.com/terms">Användarvillkor</a> tillämpas.                    </div>
+                <input type="hidden" class="g-recaptcha-response" name="g-recaptcha-response" value="" />
+
+                <!-- Submission section -->
+                <button rel="nofollow" class="c-button c-button__filled c-button__filled--primary c-button--md u-margin__top--4" aria-pressed="false" type="button" value="send" data-action="customer-feedback-submit-comment">
+                    <span class="c-button__label">
+                        <span class="c-button__label-text">
+                            <i class="c-icon c-icon--color-white c-icon--size-inherit material-icons">
+                                send
+                            </i>
+                            Skicka                        </span>
+                    </span>
+                </button>
+            </div>
+        
+            <!-- Submission success -->
+            <div id="customer-feedback-thanks" class="customer-feedback-thanks" style="display: none;">
+                <div class="c-notice c-notice--success u-margin__top--2">
+                    <span class="c-notice__icon">
+                        <i class="c-icon c-icon--color- c-icon--size-md material-icons">
+                            check
+                        </i>
+                    </span>
+                    <span class="c-notice__message--sm">
+                        Tack för ditt svar                    </span>
+                </div>
+            </div>
+                
+            <!-- Submission Error -->
+            <div id="customer-feedback-error" class="customer-feedback-error" style="display: none;">
+                <div id="" class="c-notice c-notice--danger u-margin__top--2">
+                    <span class="c-notice__icon">
+                        <i id="" class="c-icon c-icon--color- c-icon--size-md material-icons">
+                            error_outline
+                        </i>
+                    </span>
+                    <span class="c-notice__message--sm">
+                        Something went wrong, please try again later. Could not store your response.                    </span>
+                </div>
+            </div>
+
+        
+        <div id="feedback-loader" class="feedback-loader c-loader c-loader__circular--color--primary c-loader__circular c-loader__circular--md"></div>
+
+    </div>
+    <input type="hidden" id="customer-feedback-post-id" name="customer-feedback-post-id" value="3993">
+</div>
+
+    <!-- Signature -->
+  <div id="613a1ce728108" class="c-signature u-margin__y--2 u-display--none@xs u-display--none@sm c-signature--space-2" data-uid="613a1ce7280fb">
+    
+    
+    
+            <div class="c-signature__dates ">
+
+            <!-- typography.blade.php -->
+<span id="613a1ce72848a" class="c-typography c-signature__published c-typography__variant--byline" data-uid="613a1ce72847d">
+    Publicerad: <time class="">5 januari, 2015</time>
+</span>            
+                            <!-- typography.blade.php -->
+<span id="613a1ce728706" class="c-typography c-signature__updated c-typography__variant--byline" data-uid="613a1ce7286fa">
+    Uppdaterad: <time class="2021-08-30 13:21:00">30 augusti, 2021</time>
+</span>                        
+        </div>
+    
+</div>
+                            </div>
+
+                                                    </div>
+                    </div>
+
+                                            <div class="o-grid">
+                            <div class="o-grid-12">
+                                    
+    <!-- Signature -->
+  <div id="613a1ce7289cc" class="c-signature u-margin__y--2 u-display--none@md u-display--none@lg c-signature--space-2" data-uid="613a1ce7289bf">
+    
+    
+    
+            <div class="c-signature__dates ">
+
+            <!-- typography.blade.php -->
+<span id="613a1ce728c05" class="c-typography c-signature__published c-typography__variant--byline" data-uid="613a1ce728bf9">
+    Publicerad: <time class="">5 januari, 2015</time>
+</span>            
+                            <!-- typography.blade.php -->
+<span id="613a1ce728e53" class="c-typography c-signature__updated c-typography__variant--byline" data-uid="613a1ce728e47">
+    Uppdaterad: <time class="2021-08-30 13:21:00">30 augusti, 2021</time>
+</span>                        
+        </div>
+    
+</div>                            </div>
+                        </div>
+                                    </div>
+                    </main>
+
+        
+        
+</div>
+
+    <!-- footer.blade.php -->
+<footer id="site-footer" class="c-footer site-footer s-footer" data-uid="613a1ce745ecd">
+     
+     <div class="o-container">
+                <div class="o-grid-12">
+                    <div class="o-grid sidebar-footer-area-top">
+                            <div class="o-grid-12"><div id="modularity-module-2 mod-contact-banner-569900" class="modularity-mod-contact-banner modularity-mod-contact-banner-569900 o-grid-12@md"><div id="contact" class="c-contact-banner u-print-display--none">
+
+            <div class="c-contact-banner__info-container">
+            <div class="c-contact-banner__content">
+                                    <!-- typography.blade.php -->
+<h2 id="613a1ce7381ff" class="c-typography c-contact-banner__title c-typography__variant--p" data-uid="613a1ce7381ed">
+    Kontakta kommunen — En väg in
+</h2>                
+
+                            <!-- typography.blade.php -->
+<p id="613a1ce738331" class="c-typography c-contact-banner__text c-typography__variant--p" data-uid="613a1ce738325">
+    När du kontaktar oss är det kommunvägledarna på Helsingborg kontaktcenter som tar hand om dina frågor.
+</p>            
+            </div>
+
+                        
+                <div class="c-contact-banner__hours">
+
+                    <!-- Header for business hours -->
+                    <!-- typography.blade.php -->
+<h4 id="613a1ce73840c" class="c-typography c-contact-banner__hours-title c-typography__variant--p" data-uid="613a1ce738400">
+    Öppettider
+</h4>
+                    <!-- Time & date list -->
+                                                                        <!-- typography.blade.php -->
+<p id="613a1ce7384ed" class="c-typography c-typography__variant--p" data-uid="613a1ce7384e1">
+    <span class='c-contact-banner__weekdays'>Måndag-onsdag:</span> 08:00 - 17:00
+</p> 
+                                                    <!-- typography.blade.php -->
+<p id="613a1ce7385c4" class="c-typography c-typography__variant--p" data-uid="613a1ce7385b9">
+    <span class='c-contact-banner__weekdays'>Torsdag:</span> 08:00 - 18:00
+</p> 
+                                                    <!-- typography.blade.php -->
+<p id="613a1ce73869b" class="c-typography c-typography__variant--p" data-uid="613a1ce73868f">
+    <span class='c-contact-banner__weekdays'>Fredag:</span> 08:00 - 17:00
+</p> 
+                                            
+                    <!-- Abnormal link message --> 
+                                            <a id="613a1ce738875" class="c-link" target="_top" href="https://helsingborg.se/kommun-och-politik/kontakt-och-paverkan/kontakta-kommunen/" role="link" data-uid="613a1ce738867">
+        <!-- typography.blade.php -->
+<p id="613a1ce738778" class="c-typography c-contact-banner__abnormal-hours c-typography__variant--p" data-uid="613a1ce73876d">
+    Avvikande öppettider kan förekomma i samband med röda dagar, samt dag innan röd dag.
+</p>
+    </a>
+                    
+                </div>
+                    </div>
+    
+            <!-- group.blade.php -->
+<div class="c-group u-box-shadow--2 c-group--horizontal">
+    <!-- card.blade.php -->
+<div href="" id="613a1ce738f9b" class="c-card card-item-0 c-card--default c-card--ratio-4-3" aria-labelledby="mod-contactbanner-" data-uid="613a1ce738f8b">
+    
+    <div class="c-card__header u-padding__x--4 u-padding__top--3 u-padding__bottom--1">
+                        
+                                                    <!-- icon.blade.php -->
+    <i id="613a1ce7389df" class="c-icon c-icon--color-primary c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce7389bb">
+                    chat_bubble_outline 
+            </i>
+                            
+                        <!-- typography.blade.php -->
+<h4 id="mod-contactbanner-" class="c-typography u-margin__left--1 c-typography__variant--h3" data-uid="613a1ce738b1a">
+    Chatta
+</h4>                    </div>
+
+                    <div class="c-card__body u-padding__x--4 u-padding__top--0 u-padding__bottom--3">
+                        <p>Få svar direkt – chatta med en kommunvägledare</p>
+
+                    </div>
+
+                                            <div class="c-card__footer c-contact-banner__footer u-padding--2">
+                            <a id="613a1ce738c628.67691819" class="c-button c-button__basic c-button__basic--default c-button--md ripple ripple--before" href="#contact" target="_top" onclick="action0()" type="button" data-uid="613a1ce738c94">   
+    <span class="c-button__label">
+    
+                    <span class="c-button__label-text">
+                Starta chatt
+            </span>
+
+            <span class="c-button__label-icon">
+                <!-- icon.blade.php -->
+    <i id="613a1ce738e0e" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce738dfb">
+                    arrow_forward
+            </i>
+            </span>
+        
+                    
+            
+    </span>
+</a>
+                                                        <script>function action0() {
+                                expandVngageBanner(); return false; 
+                            }</script>
+                                                    </div>
+</div>                            <!-- card.blade.php -->
+<div href="" id="613a1ce739503" class="c-card card-item-1 c-card--default c-card--ratio-4-3" aria-labelledby="mod-contactbanner-" data-uid="613a1ce7394f6">
+    
+    <div class="c-card__header u-padding__x--4 u-padding__top--3 u-padding__bottom--1">
+                        
+                                                    <!-- icon.blade.php -->
+    <i id="613a1ce739110" class="c-icon c-icon--color-primary c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce739103">
+                    mail_outline
+            </i>
+                            
+                        <!-- typography.blade.php -->
+<h4 id="mod-contactbanner-" class="c-typography u-margin__left--1 c-typography__variant--h3" data-uid="613a1ce7391f9">
+    Mejla
+</h4>                    </div>
+
+                    <div class="c-card__body u-padding__x--4 u-padding__top--0 u-padding__bottom--3">
+                        <p>Få svar inom 24 timmar kontaktcenter@helsingborg.se</p>
+
+                    </div>
+
+                                            <div class="c-card__footer c-contact-banner__footer u-padding--2">
+                            <a id="613a1ce7392bc0.46568633" class="c-button c-button__basic c-button__basic--default c-button--md ripple ripple--before" href="mailto:kontaktcenter@helsingborg.se" target="_top" onclick="" type="button" data-uid="613a1ce7392e0">   
+    <span class="c-button__label">
+    
+                    <span class="c-button__label-text">
+                Skicka mejl
+            </span>
+
+            <span class="c-button__label-icon">
+                <!-- icon.blade.php -->
+    <i id="613a1ce7393ed" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce7393e0">
+                    arrow_forward
+            </i>
+            </span>
+        
+                    
+            
+    </span>
+</a>
+                                                    </div>
+</div>                            <!-- card.blade.php -->
+<div href="" id="613a1ce739a34" class="c-card card-item-2 c-card--default c-card--ratio-4-3" aria-labelledby="mod-contactbanner-" data-uid="613a1ce739a28">
+    
+    <div class="c-card__header u-padding__x--4 u-padding__top--3 u-padding__bottom--1">
+                        
+                                                    <!-- icon.blade.php -->
+    <i id="613a1ce739646" class="c-icon c-icon--color-primary c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce739639">
+                    people_outline
+            </i>
+                            
+                        <!-- typography.blade.php -->
+<h4 id="mod-contactbanner-" class="c-typography u-margin__left--1 c-typography__variant--h3" data-uid="613a1ce73972c">
+    Besök
+</h4>                    </div>
+
+                    <div class="c-card__body u-padding__x--4 u-padding__top--0 u-padding__bottom--3">
+                        <p><span class="c-contact-banner__item-content-inner">Besök oss på Helsingborg Kontaktcenter på Stortorget 17 </span></p>
+
+                    </div>
+
+                                            <div class="c-card__footer c-contact-banner__footer u-padding--2">
+                            <a id="613a1ce7397ec4.43060199" class="c-button c-button__basic c-button__basic--default c-button--md ripple ripple--before" href="https://www.google.com/maps/place/Helsingborg+kontaktcenter/@56.0477948,12.6951561,17.5z/data=!4m5!3m4!1s0x0:0x5d6403b214925c57!8m2!3d56.0474119!4d12.6959601" target="_top" onclick="" type="button" data-uid="613a1ce739811">   
+    <span class="c-button__label">
+    
+                    <span class="c-button__label-text">
+                Visa karta
+            </span>
+
+            <span class="c-button__label-icon">
+                <!-- icon.blade.php -->
+    <i id="613a1ce73991d" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce739911">
+                    arrow_forward
+            </i>
+            </span>
+        
+                    
+            
+    </span>
+</a>
+                                                    </div>
+</div>                            <!-- card.blade.php -->
+<div href="" id="613a1ce739f80" class="c-card card-item-3 c-card--default c-card--ratio-4-3" aria-labelledby="mod-contactbanner-" data-uid="613a1ce739f74">
+    
+    <div class="c-card__header u-padding__x--4 u-padding__top--3 u-padding__bottom--1">
+                        
+                                                    <!-- icon.blade.php -->
+    <i id="613a1ce739b6c" class="c-icon c-icon--color-primary c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce739b60">
+                    phonelink_ring
+            </i>
+                            
+                        <!-- typography.blade.php -->
+<h4 id="mod-contactbanner-" class="c-typography u-margin__left--1 c-typography__variant--h3" data-uid="613a1ce739c68">
+    Ring
+</h4>                    </div>
+
+                    <div class="c-card__body u-padding__x--4 u-padding__top--0 u-padding__bottom--3">
+                        <p>Prata med en kommunvägledare på telefon 042-10 50 00</p>
+
+                    </div>
+
+                                            <div class="c-card__footer c-contact-banner__footer u-padding--2">
+                            <a id="613a1ce739d427.81888549" class="c-button c-button__basic c-button__basic--default c-button--md ripple ripple--before" href="tel:+4642105000" target="_top" onclick="" type="button" data-uid="613a1ce739d66">   
+    <span class="c-button__label">
+    
+                    <span class="c-button__label-text">
+                Ring
+            </span>
+
+            <span class="c-button__label-icon">
+                <!-- icon.blade.php -->
+    <i id="613a1ce739e71" class="c-icon c-icon--size-md material-icons" translate="no" role="img" data-uid="613a1ce739e64">
+                    arrow_forward
+            </i>
+            </span>
+        
+                    
+            
+    </span>
+</a>
+                                                    </div>
+</div>
+</div>    
+</div>
+</div></div>                    </div>
+                </div>
+        </div>
+        
+        <div class="o-container">
+            
+            <div class="o-grid">
+
+                                    <div class="o-grid-12">
+                        <a id="613a1ce73a709" class="c-link u-margin__right--auto" target="_top" href="index.html" role="link" data-uid="613a1ce73a6fc">
+        <!-- logotype.blade.php -->
+<figure id="footer-logotype" class="c-logotype site-footer__logo ripple ripple--before" data-uid="613a1ce73a5f6">
+            <img src="https://helsingborg.se/wp-content/uploads/2017/05/helsingborg-1.svg" alt="Gå till startsidan" class="c-logotype__image" />
+            </figure>
+    </a>
+                    </div>
+                
+                
+                                    <div class="o-grid-12">
+                        <div class="o-grid sidebar-footer-area">
+                                <div class="widget_text o-grid-4@lg"><div id="custom_html-4" class="widget_text widget_custom_html"><div class="textwidget custom-html-widget"><strong>Postadress</strong><br>
+Namn på verksamheten<br>
+251 89 Helsingborg
+<p>Organisationsnummer: 212000-1157</p></div></div></div><div class="widget_text o-grid-4@lg"><div id="custom_html-5" class="widget_text widget_custom_html"><div class="textwidget custom-html-widget"><a href="https://helsingborg.se/toppmeny/om-webbplatsen/">Om webbplatsen</a>.
+<p><a href="https://helsingborg.se/toppmeny/om-webbplatsen/sa-har-behandlar-vi-dina-personuppgifter/">Så behandlar Helsingborgs stad dina personuppgifter</a>.</p></div></div></div><div class="o-grid-4@lg"><div id="nav_menu-2" class="widget_nav_menu"><div class="menu-sidfotsmeny-container"><ul id="menu-sidfotsmeny" class="menu"><li id="menu-item-752517" class="menu-item menu-item-type-post_type menu-item-object-kommun-och-politik menu-item-752517"><a href="https://helsingborg.se/kommun-och-politik/larm-till-raddningstjansten-skane-nordvast/">Larm</a></li>
+<li id="menu-item-180184" class="menu-item menu-item-type-post_type menu-item-object-kommun-och-politik menu-item-180184"><a href="https://helsingborg.se/kommun-och-politik/press/">Press</a></li>
+<li id="menu-item-824912" class="translate-link menu-item menu-item-type-custom menu-item-object-custom menu-item-824912"><a title="Translate this page" href="#translate">Translate</a></li>
+</ul></div></div></div><div class="widget_text o-grid-4@lg"><div id="custom_html-2" class="widget_text widget_custom_html"><div class="textwidget custom-html-widget"><div id="vergic-meetingcode">
+	<!-- Inject position for vergic meeting code --> 
+</div></div></div></div>                        </div>
+                    </div>
+                            </div>
+        </div>
+     
+ </footer>
+
+
+
+			<!--googleoff: index-->
+			<div class="modal-cacsp-backdrop"></div>
+			<div class="modal-cacsp-position">
+				<div class="modal-cacsp-box modal-cacsp-box-info modal-cacsp-box-bottom">
+					<div class="modal-cacsp-box-header">
+						Information om cookies					</div>
+					<div class="modal-cacsp-box-content">
+						På helsingborg.se använder vi cookies (kakor) för att webbplatsen ska fungera på ett bra sätt för dig. Genom att klicka på acceptera godkänner du att vi använder cookies.													<a href="https://helsingborg.se/om-webbplatsen/om-cookies-pa-webbplatsen/">
+								Läs mer om hur Helsingborgs stad behandlar personuppgifter.							</a>
+											</div>
+					<div class="modal-cacsp-btns">
+						<a href="#" class="modal-cacsp-btn modal-cacsp-btn-settings">
+							Inställningar						</a>
+												<a href="#" class="modal-cacsp-btn modal-cacsp-btn-refuse">
+							Neka alla						</a>
+												<a href="#" class="modal-cacsp-btn modal-cacsp-btn-accept">
+							Acceptera						</a>
+					</div>
+				</div>
+				<div class="modal-cacsp-box modal-cacsp-box-settings">
+					<div class="modal-cacsp-box-header">
+						Information om cookies					</div>
+					<div class="modal-cacsp-box-content">
+						Välj vilken typ av kakor du vill acceptera. Ditt val kommer att sparas i ett år.													<a href="https://helsingborg.se/om-webbplatsen/om-cookies-pa-webbplatsen/">
+								Läs mer om hur Helsingborgs stad behandlar personuppgifter.							</a>
+											</div>
+					<div class="modal-cacsp-box-settings-list">
+												<ul>
+							<li>
+								<span class="modal-cacsp-toggle-switch modal-cacsp-toggle-switch-active disabled" data-accepted-cookie="necessary">
+									<span>Nödvändiga<br>
+										<span>Dessa kakor går inte att välja bort. De behövs för att hemsidan över huvud taget ska fungera.</span>
+									</span>
+									<span>
+										<span class="modal-cacsp-toggle">
+											<span class="modal-cacsp-toggle-switch-handle"></span>
+										</span>
+									</span>
+								</span>
+							</li>
+														<li>
+								<a href="#statistics" class="modal-cacsp-toggle-switch" data-accepted-cookie="statistics">
+									<span>Statistik<br>
+										<span>För att vi ska kunna förbättra hemsidans funktionalitet och uppbyggnad, baserat på hur hemsidan används.</span>
+									</span>
+									<span>
+										<span class="modal-cacsp-toggle">
+											<span class="modal-cacsp-toggle-switch-handle"></span>
+										</span>
+									</span>
+								</a>
+							</li>
+														<li>
+								<a href="#experience" class="modal-cacsp-toggle-switch" data-accepted-cookie="experience">
+									<span>Upplevelse<br>
+										<span>För att vår hemsida ska prestera så bra som möjligt under ditt besök. Om du nekar de här kakorna kommer viss funktionalitet att försvinna från hemsidan.</span>
+									</span>
+									<span>
+										<span class="modal-cacsp-toggle">
+											<span class="modal-cacsp-toggle-switch-handle"></span>
+										</span>
+									</span>
+								</a>
+							</li>
+														<li>
+								<a href="#markerting" class="modal-cacsp-toggle-switch" data-accepted-cookie="markerting">
+									<span>Marknadsföring<br>
+										<span>Genom att dela med dig av dina intressen och ditt beteende när du surfar ökar du chansen att få se personligt anpassat innehåll och erbjudanden.</span>
+									</span>
+									<span>
+										<span class="modal-cacsp-toggle">
+											<span class="modal-cacsp-toggle-switch-handle"></span>
+										</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="modal-cacsp-btns">
+						<a href="#" class="modal-cacsp-btn modal-cacsp-btn-save">
+							Spara						</a>
+												<a href="#" class="modal-cacsp-btn modal-cacsp-btn-refuse-all">
+							Neka alla						</a>
+												<a href="#" class="modal-cacsp-btn modal-cacsp-btn-accept-all">
+							Acceptera						</a>
+					</div>
+				</div>
+			</div>
+			<!--googleon: index-->
+			<noscript><p><img src="https://stats.helsingborg.se/matomo.php?idsite=2&rec=1" style="border:0;" alt="" /></p></noscript>
+<link rel='stylesheet' id='municipio-font-css'  href='https://fonts.googleapis.com/css2?family=Roboto%3Aital%2Cwght%400%2C100%3B0%2C300%3B0%2C400%3B0%2C500%3B0%2C700%3B0%2C900%3B1%2C100%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C700%3B1%2C900&#038;display=swap&#038;ver=5.8' type='text/css' media='all' />
+<style id='municipio-css-vars-inline-css' type='text/css'>
+:root {
+  /* Variables: Colors */
+  --color-primary: rgba(174, 11, 5, 1);
+  --color-primary-dark: rgba(119, 0, 0, 1);
+  --color-primary-light: rgba(232, 76, 49, 1);
+  --color-primary-alpha: rgba(174, 11, 5, 1%);
+  --color-primary-alpha-dimmed: rgba(174, 11, 5, 1%);
+  --color-secondary: rgba(236, 103, 1, 1);
+  --color-secondary-dark: rgba(178, 55, 0, 1);
+  --color-secondary-light: rgba(255, 152, 62, 1);
+  --color-secondary-alpha: rgba(174, 11, 5, 1%);
+  --color-secondary-alpha-dimmed: rgba(174, 11, 5, 1%);
+  --color-tertiary: rgba(236, 103, 1, 1);
+  --color-tertiary-dark: rgba(178, 55, 0, 1);
+  --color-tertiary-light: rgba(255, 152, 62, 1);
+  --color-tertiary-alpha: rgba(174, 11, 5, 1%);
+  --color-tertiary-alpha-dimmed: rgba(174, 11, 5, 1%);
+  --color-link: rgba(0, 0, 0, 1);
+  --color-link-hover: rgba(174, 11, 5, 1);
+  --color-link-visited: rgba(0, 0, 0, 1);
+  --color-link-visited-hover: rgba(119, 0, 0, 1);
+  --color-link-active: rgba(174, 11, 5, 1);
+  --color-complementary: rgba(222, 194, 194, 1);
+  --color-complementary-light: rgba(240, 219, 217, 1);
+  --color-complementary-lighter: rgba(245, 228, 227, 1);
+  --color-complementary-lightest: rgba(250, 238, 236, 1);
+
+  /* Variables: Radiuses */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Variables: Site-width */
+  --container-width: 1280px;
+  --container-width-content: 700px;
+}
+</style>
+<script type='text/javascript' defer="defer" src='https://instant.page/3.0.0?ver=5.8' id='instant-page-js'></script>
+<script type='text/javascript' id='pre-styleguide-js-js-extra'>
+/* <![CDATA[ */
+var localizedMonths = ["Januari","Februari","Mars","April","Maj","Juni","Juli","Augusti","September","Oktober","November","December"];
+var localizedDays = ["S\u00f6","M\u00e5","Ti","On","To","Fr","L\u00f6"];
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/api-event-manager-integration/source/js/vendor/simple-pagination/jquery.simplePagination.min.js' id='vendor-pagination-js'></script>
+<script type='text/javascript' id='modularity-event-js-extra'>
+/* <![CDATA[ */
+var modEvent = {"moreEvents":"Fler evenemang","noEventsFound":"Inga evenemang hittades","next":"N\u00e4sta","prev":"F\u00f6reg\u00e5ende","search":"S\u00f6k","from":"Fr\u00e5n","to":"Till","date":"datum","categories":"Kategorier","tags":"Taggar","age":"\u00c5lder","ageGroupDescription":"Filtrera p\u00e5 evenemang som \u00e4r riktade till en \u00e5lder","years":"\u00e5r","selectAge":"V\u00e4lj \u00e5lder"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/api-event-manager-integration/dist/js/event-integration-module-event.25270045ddffd3e02d3d.js' id='modularity-event-js'></script>
+<script type='text/javascript' id='modularity-guides-js-extra'>
+/* <![CDATA[ */
+var guides = {"email_sent":"Meddelandet har skickats","email_failed":"Meddelandet kunde inte skickas. V\u00e4nligen f\u00f6rs\u00f6k igen senare.","lockMessage":"You need to check the required fields"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/modularity-guides/dist/js/modularity-guides.19c3b6fa2a0cb2406ca4.js' id='modularity-guides-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/cookies-and-content-security-policy/js/js.cookie-2.2.1.min.js' id='cookies-and-content-security-policy-cookie-js'></script>
+<script type='text/javascript' id='cookies-and-content-security-policy-js-extra'>
+/* <![CDATA[ */
+var cacspMessages = {"cacspReviewSettingsDescription":"Det verkar som om dina inst\u00e4llningar hindrar dig fr\u00e5n att se detta inneh\u00e5llet. Med st\u00f6rsta sannolikhet \u00e4r det f\u00f6r att du har Upplevelse avst\u00e4ngt.","cacspReviewSettingsButton":"Granska dina inst\u00e4llningar","cacspNotAllowedDescription":"Inneh\u00e5llet kan inte laddas eftersom det inte \u00e4r till\u00e5tet p\u00e5 siten.","cacspNotAllowedButton":"Kontakta administrat\u00f6ren"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/cookies-and-content-security-policy/js/cookies-and-content-security-policy.min.js' id='cookies-and-content-security-policy-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/cookies-and-content-security-policy/js/cookies-and-content-security-policy-error-message.php' id='cookies-and-content-security-policy-error-message-js'></script>
+<script type='text/javascript' defer="defer" src='https://www.google.com/recaptcha/api.js?onload=setToken&#038;render=6Le4QmcaAAAAAJq9AviuSXMMS0shmdBGhvHCuLO-&#038;ver=dev' id='municipio-google-recaptcha-js'></script>
+<script type='text/javascript' id='municipio-google-recaptcha-js-after'>
+                function setToken() {
+                    if (window.grecaptcha) {
+                        grecaptcha.ready(function () {
+                            grecaptcha.execute('6Le4QmcaAAAAAJq9AviuSXMMS0shmdBGhvHCuLO-', {action: 'homepage'}).then(function (token) {
+                                var captcha = document.getElementsByClassName('g-recaptcha-response');
+                                for (var i = 0; i < captcha.length; i++) {
+                                    captcha[i].value = token;
+                                }
+                            });
+                        });
+                    }
+                }
+                
+                setInterval(function () {
+                    setToken();
+                }, 60000);
+            
+</script>
+<script type='text/javascript' defer="defer" src='//maps.googleapis.com/maps/api/js?key=AIzaSyAki5TaPKxxLHuYoYzIFmwf39y9EJS1uvk&#038;ver=5.8' id='google-maps-api-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/api-event-manager-integration/source/js/vendor/auto-complete/auto-complete.min.js' id='auto-complete-js'></script>
+<script type='text/javascript' id='event-integration-js-extra'>
+/* <![CDATA[ */
+var eventintegration = {"ajaxurl":"https:\/\/helsingborg.se\/wp\/wp-admin\/admin-ajax.php","apiurl":"https:\/\/api.helsingborg.se\/event\/json\/wp\/v2"};
+var eventIntegrationFront = {"event_pagination_error":"N\u00e5got gick fel, v\u00e4nligen f\u00f6rs\u00f6k igen senare.","email_not_matching":"E-postadresserna matchar inte.","must_upload_image":"Du m\u00e5ste ladda upp en bild."};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/api-event-manager-integration/dist/js/event-integration-front.6ee3e95606164bc03e99.js' id='event-integration-js'></script>
+<script type='text/javascript' id='modularity-js-extra'>
+/* <![CDATA[ */
+var modularityAdminLanguage = {"langedit":"Redigera","langimport":"Importera","langremove":"Ta bort","langhide":"D\u00f6lj modulen","actionRemove":"\u00c4r du s\u00e4ker p\u00e5 att du vill ta bort modulen?","isSaving":"Sparar\u2026","close":"St\u00e4ng","width":"Bredd","widthOptions":"<option value=\"\">\u00c4rv<\/option>\n<option value=\"grid-md-12\">100%<\/option>\n<option value=\"grid-md-9\">75%<\/option>\n<option value=\"grid-md-8\">66%<\/option>\n<option value=\"grid-md-6\">50%<\/option>\n<option value=\"grid-md-4\">33%<\/option>\n<option value=\"grid-md-3\">25%<\/option>\n","deprecated":"Utg\u00e5ende"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/modularity/dist/js/modularity.min.js' id='modularity-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp/wp-includes/js/wp-embed.min.js' id='wp-embed-js'></script>
+<script defer>
+            var disturbances = {};
+            disturbances.inited = false;
+            disturbances.apiUrl = 'https://api.helsingborg.se/alarm/json/';
+            disturbances.places = ["2"];
+            disturbances.more_info = 'Visa mer information';
+            disturbances.less_info = 'Visa mindre information';
+            disturbances.output_small_active = '1';
+            disturbances.output_big_active = '1';
+            disturbances.output_small = 'body';
+            disturbances.output_big = 'body';
+            !function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=4)}({4:function(e,t,n){"use strict";function r(e,t,n,r,o,i,a){try{var c=e[i](a),u=c.value}catch(e){return void n(e)}c.done?t(u):Promise.resolve(u).then(r,o)}function o(e){return function(){var t=this,n=arguments;return new Promise((function(o,i){var a=e.apply(t,n);function c(e){r(a,o,i,c,u,"next",e)}function u(e){r(a,o,i,c,u,"throw",e)}c(void 0)}))}}function i(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}n.r(t);var a=function(){function e(){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.requestUrl="https://api.helsingborg.se/alarm/json/wp/v2/disturbances",this.data={},disturbances.places.join(",").length>0&&(this.data.place=disturbances.places.join(",")),this.getNotices()}var t,n,r;return t=e,(n=[{key:"getNotices",value:function(){var e=this,t=this.serialize(this.data);function n(){return(n=o(regeneratorRuntime.mark((function e(){var t,n,r=arguments;return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return t=r.length>0&&void 0!==r[0]?r[0]:"",e.next=3,fetch(t,{cache:"no-cache",headers:{"Content-Type":"application/x-www-form-urlencoded"},redirect:"follow",referrerPolicy:"no-referrer"});case 3:if(200===(n=e.sent).status){e.next=6;break}return e.abrupt("return",!1);case 6:return e.abrupt("return",n.json());case 7:case"end":return e.stop()}}),e)})))).apply(this,arguments)}(function(){return n.apply(this,arguments)})("".concat(this.requestUrl,"?").concat(t)).then((function(t){disturbances.output_small_active&&t.small.forEach((function(t){document.querySelectorAll("#disturbance-"+t.ID).length>0||(e.getTemplate(t),document.querySelector(disturbances.output_small).insertAdjacentHTML("afterbegin",e.getTemplate(t)))})),disturbances.output_big_active&&t.big.forEach((function(t){document.querySelectorAll("#disturbance-"+t.ID).length>0||(e.getTemplate(t,!0),document.querySelector(disturbances.output_big).insertAdjacentHTML("afterbegin",e.getTemplate(t,!0)))}))})).catch((function(e){console.log(e),console.log("API Alarm Integration plugin: Request failed!")}))}},{key:"serialize",value:function(e){var t=[];for(var n in e)e.hasOwnProperty(n)&&t.push(encodeURIComponent(n)+"="+encodeURIComponent(e[n]));return t.join("&")}},{key:"getTemplate",value:function(e){var t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=t?"warning":"info";return'<div id="disturbance-'+e.ID+'" class="modularity-mod-notices c-notice c-notice--'+n+' u-margin--0" style="border-radius: 0 !important;; box-shadow: none !important;">        <span class="c-notice__icon"><i id="" class="c-icon c-icon--color- c-icon--size-md material-icons" data-uid="5fa0039575fdc">forum</i></span><span class="c-notice__message--sm"><strong>'+e.post_title+"</strong></span></br>"+e.post_content+"</div>"}}])&&i(t.prototype,n),r&&i(t,r),e}();document.addEventListener("DOMContentLoaded",(function(e){new a}))}});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vd2VicGFjay9ib290c3RyYXAiLCJ3ZWJwYWNrOi8vLy4vc291cmNlL2pzL2FwaS1hbGFybS1ub3RpY2UuanMiLCJ3ZWJwYWNrOi8vLy4vc291cmNlL2pzL2FwaS1hbGFybS1pbmRleC5qcyJdLCJuYW1lcyI6WyJpbnN0YWxsZWRNb2R1bGVzIiwiX193ZWJwYWNrX3JlcXVpcmVfXyIsIm1vZHVsZUlkIiwiZXhwb3J0cyIsIm1vZHVsZSIsImkiLCJsIiwibW9kdWxlcyIsImNhbGwiLCJtIiwiYyIsImQiLCJuYW1lIiwiZ2V0dGVyIiwibyIsIk9iamVjdCIsImRlZmluZVByb3BlcnR5IiwiZW51bWVyYWJsZSIsImdldCIsInIiLCJTeW1ib2wiLCJ0b1N0cmluZ1RhZyIsInZhbHVlIiwidCIsIm1vZGUiLCJfX2VzTW9kdWxlIiwibnMiLCJjcmVhdGUiLCJrZXkiLCJiaW5kIiwibiIsIm9iamVjdCIsInByb3BlcnR5IiwicHJvdG90eXBlIiwiaGFzT3duUHJvcGVydHkiLCJwIiwicyIsIk5vdGljZU1vZHVsZSIsInRoaXMiLCJyZXF1ZXN0VXJsIiwiZGF0YSIsImRpc3R1cmJhbmNlcyIsInBsYWNlcyIsImpvaW4iLCJsZW5ndGgiLCJwbGFjZSIsImdldE5vdGljZXMiLCJkYXRhUXVlcnkiLCJzZXJpYWxpemUiLCJ1cmwiLCJmZXRjaCIsImNhY2hlIiwiaGVhZGVycyIsInJlZGlyZWN0IiwicmVmZXJyZXJQb2xpY3kiLCJyZXNwb25zZSIsInN0YXR1cyIsImpzb24iLCJwb3N0RGF0YSIsInRoZW4iLCJvdXRwdXRfc21hbGxfYWN0aXZlIiwic21hbGwiLCJmb3JFYWNoIiwiaXRlbSIsImRvY3VtZW50IiwicXVlcnlTZWxlY3RvckFsbCIsIklEIiwiZ2V0VGVtcGxhdGUiLCJxdWVyeVNlbGVjdG9yIiwib3V0cHV0X3NtYWxsIiwiaW5zZXJ0QWRqYWNlbnRIVE1MIiwib3V0cHV0X2JpZ19hY3RpdmUiLCJiaWciLCJvdXRwdXRfYmlnIiwiY2F0Y2giLCJlIiwiY29uc29sZSIsImxvZyIsIm9iaiIsInN0ciIsInBhcmFtIiwicHVzaCIsImVuY29kZVVSSUNvbXBvbmVudCIsInNpemUiLCJwb3N0X3RpdGxlIiwicG9zdF9jb250ZW50IiwiYWRkRXZlbnRMaXN0ZW5lciIsImV2ZW50Il0sIm1hcHBpbmdzIjoiYUFDRSxJQUFJQSxFQUFtQixHQUd2QixTQUFTQyxFQUFvQkMsR0FHNUIsR0FBR0YsRUFBaUJFLEdBQ25CLE9BQU9GLEVBQWlCRSxHQUFVQyxRQUduQyxJQUFJQyxFQUFTSixFQUFpQkUsR0FBWSxDQUN6Q0csRUFBR0gsRUFDSEksR0FBRyxFQUNISCxRQUFTLElBVVYsT0FOQUksRUFBUUwsR0FBVU0sS0FBS0osRUFBT0QsUUFBU0MsRUFBUUEsRUFBT0QsUUFBU0YsR0FHL0RHLEVBQU9FLEdBQUksRUFHSkYsRUFBT0QsUUFLZkYsRUFBb0JRLEVBQUlGLEVBR3hCTixFQUFvQlMsRUFBSVYsRUFHeEJDLEVBQW9CVSxFQUFJLFNBQVNSLEVBQVNTLEVBQU1DLEdBQzNDWixFQUFvQmEsRUFBRVgsRUFBU1MsSUFDbENHLE9BQU9DLGVBQWViLEVBQVNTLEVBQU0sQ0FBRUssWUFBWSxFQUFNQyxJQUFLTCxLQUtoRVosRUFBb0JrQixFQUFJLFNBQVNoQixHQUNYLG9CQUFYaUIsUUFBMEJBLE9BQU9DLGFBQzFDTixPQUFPQyxlQUFlYixFQUFTaUIsT0FBT0MsWUFBYSxDQUFFQyxNQUFPLFdBRTdEUCxPQUFPQyxlQUFlYixFQUFTLGFBQWMsQ0FBRW1CLE9BQU8sS0FRdkRyQixFQUFvQnNCLEVBQUksU0FBU0QsRUFBT0UsR0FFdkMsR0FEVSxFQUFQQSxJQUFVRixFQUFRckIsRUFBb0JxQixJQUMvQixFQUFQRSxFQUFVLE9BQU9GLEVBQ3BCLEdBQVcsRUFBUEUsR0FBOEIsaUJBQVZGLEdBQXNCQSxHQUFTQSxFQUFNRyxXQUFZLE9BQU9ILEVBQ2hGLElBQUlJLEVBQUtYLE9BQU9ZLE9BQU8sTUFHdkIsR0FGQTFCLEVBQW9Ca0IsRUFBRU8sR0FDdEJYLE9BQU9DLGVBQWVVLEVBQUksVUFBVyxDQUFFVCxZQUFZLEVBQU1LLE1BQU9BLElBQ3RELEVBQVBFLEdBQTRCLGlCQUFURixFQUFtQixJQUFJLElBQUlNLEtBQU9OLEVBQU9yQixFQUFvQlUsRUFBRWUsRUFBSUUsRUFBSyxTQUFTQSxHQUFPLE9BQU9OLEVBQU1NLElBQVFDLEtBQUssS0FBTUQsSUFDOUksT0FBT0YsR0FJUnpCLEVBQW9CNkIsRUFBSSxTQUFTMUIsR0FDaEMsSUFBSVMsRUFBU1QsR0FBVUEsRUFBT3FCLFdBQzdCLFdBQXdCLE9BQU9yQixFQUFnQixTQUMvQyxXQUE4QixPQUFPQSxHQUV0QyxPQURBSCxFQUFvQlUsRUFBRUUsRUFBUSxJQUFLQSxHQUM1QkEsR0FJUlosRUFBb0JhLEVBQUksU0FBU2lCLEVBQVFDLEdBQVksT0FBT2pCLE9BQU9rQixVQUFVQyxlQUFlMUIsS0FBS3VCLEVBQVFDLElBR3pHL0IsRUFBb0JrQyxFQUFJLEdBSWpCbEMsRUFBb0JBLEVBQW9CbUMsRUFBSSxHLDhnQkNBdENDLEUsV0FqRlgsYyw0RkFBYyxTQUVWQyxLQUFLQyxXQUFhLDJEQUNsQkQsS0FBS0UsS0FBTyxHQUVSQyxhQUFhQyxPQUFPQyxLQUFLLEtBQUtDLE9BQVMsSUFDdkNOLEtBQUtFLEtBQUtLLE1BQVFKLGFBQWFDLE9BQU9DLEtBQUssTUFHL0NMLEtBQUtRLGEsNERBR0ksV0FFTEMsRUFBWVQsS0FBS1UsVUFBVVYsS0FBS0UsTUFGM0IsaURBSVQsd0hBQXdCUyxFQUF4QiwrQkFBOEIsR0FBOUIsU0FDMkJDLE1BQU1ELEVBQUssQ0FDOUJFLE1BQU8sV0FDUEMsUUFBUyxDQUNMLGVBQWdCLHFDQUVwQkMsU0FBVSxTQUNWQyxlQUFnQixnQkFQeEIsVUFVNEIsT0FUbEJDLEVBRFYsUUFVaUJDLE9BVmpCLDBDQVdlLEdBWGYsZ0NBY1dELEVBQVNFLFFBZHBCLDRDQUpTLGtFQXFCVEMsQ0FBUyxHQUFELE9BQUlwQixLQUFLQyxXQUFULFlBQXVCUSxJQUFhWSxNQUFLLFNBQUNKLEdBRTFDZCxhQUFhbUIscUJBQ2JMLEVBQVNNLE1BQU1DLFNBQVEsU0FBQUMsR0FDZkMsU0FBU0MsaUJBQWlCLGdCQUFrQkYsRUFBS0csSUFBSXRCLE9BQVMsSUFJbEUsRUFBS3VCLFlBQVlKLEdBRWpCQyxTQUFTSSxjQUFjM0IsYUFBYTRCLGNBQWNDLG1CQUFtQixhQUFjLEVBQUtILFlBQVlKLFFBSXhHdEIsYUFBYThCLG1CQUNiaEIsRUFBU2lCLElBQUlWLFNBQVEsU0FBQUMsR0FDYkMsU0FBU0MsaUJBQWlCLGdCQUFrQkYsRUFBS0csSUFBSXRCLE9BQVMsSUFJbEUsRUFBS3VCLFlBQVlKLEdBQU0sR0FFdkJDLFNBQVNJLGNBQWMzQixhQUFhZ0MsWUFBWUgsbUJBQW1CLGFBQWMsRUFBS0gsWUFBWUosR0FBTSxXQUdqSFcsT0FBTSxTQUFDQyxHQUNOQyxRQUFRQyxJQUFJRixHQUNaQyxRQUFRQyxJQUFJLHNELGdDQUlWQyxHQUNOLElBQUlDLEVBQU0sR0FDVixJQUFLLElBQUlDLEtBQVNGLEVBQ1ZBLEVBQUk1QyxlQUFlOEMsSUFDbkJELEVBQUlFLEtBQUtDLG1CQUFtQkYsR0FBUyxJQUFNRSxtQkFBbUJKLEVBQUlFLEtBRTFFLE9BQU9ELEVBQUlwQyxLQUFLLE8sa0NBR1JvQixHQUFvQixJQUFkUyxFQUFjLHdEQUN4QlcsRUFBT1gsRUFBTSxVQUFZLE9BRTdCLE1BQU8sd0JBQTJCVCxFQUFLRyxHQUFLLHNEQUF3RGlCLEVBQU8sb1JBQ3FGcEIsRUFBS3FCLFdBQWEsd0JBQTJCckIsRUFBS3NCLGFBQWUsYyxnQ0MzRXpRckIsU0FBU3NCLGlCQUFpQixvQkFBb0IsU0FBU0MsR0FDNUIsSUFBSWxEIiwiZmlsZSI6ImpzL2FwaS1hbGFybS1pbmRleC44NmE5MmEyOTQ0YmE3OGJhMjZiYy5taW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyIgXHQvLyBUaGUgbW9kdWxlIGNhY2hlXG4gXHR2YXIgaW5zdGFsbGVkTW9kdWxlcyA9IHt9O1xuXG4gXHQvLyBUaGUgcmVxdWlyZSBmdW5jdGlvblxuIFx0ZnVuY3Rpb24gX193ZWJwYWNrX3JlcXVpcmVfXyhtb2R1bGVJZCkge1xuXG4gXHRcdC8vIENoZWNrIGlmIG1vZHVsZSBpcyBpbiBjYWNoZVxuIFx0XHRpZihpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXSkge1xuIFx0XHRcdHJldHVybiBpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXS5leHBvcnRzO1xuIFx0XHR9XG4gXHRcdC8vIENyZWF0ZSBhIG5ldyBtb2R1bGUgKGFuZCBwdXQgaXQgaW50byB0aGUgY2FjaGUpXG4gXHRcdHZhciBtb2R1bGUgPSBpbnN0YWxsZWRNb2R1bGVzW21vZHVsZUlkXSA9IHtcbiBcdFx0XHRpOiBtb2R1bGVJZCxcbiBcdFx0XHRsOiBmYWxzZSxcbiBcdFx0XHRleHBvcnRzOiB7fVxuIFx0XHR9O1xuXG4gXHRcdC8vIEV4ZWN1dGUgdGhlIG1vZHVsZSBmdW5jdGlvblxuIFx0XHRtb2R1bGVzW21vZHVsZUlkXS5jYWxsKG1vZHVsZS5leHBvcnRzLCBtb2R1bGUsIG1vZHVsZS5leHBvcnRzLCBfX3dlYnBhY2tfcmVxdWlyZV9fKTtcblxuIFx0XHQvLyBGbGFnIHRoZSBtb2R1bGUgYXMgbG9hZGVkXG4gXHRcdG1vZHVsZS5sID0gdHJ1ZTtcblxuIFx0XHQvLyBSZXR1cm4gdGhlIGV4cG9ydHMgb2YgdGhlIG1vZHVsZVxuIFx0XHRyZXR1cm4gbW9kdWxlLmV4cG9ydHM7XG4gXHR9XG5cblxuIFx0Ly8gZXhwb3NlIHRoZSBtb2R1bGVzIG9iamVjdCAoX193ZWJwYWNrX21vZHVsZXNfXylcbiBcdF9fd2VicGFja19yZXF1aXJlX18ubSA9IG1vZHVsZXM7XG5cbiBcdC8vIGV4cG9zZSB0aGUgbW9kdWxlIGNhY2hlXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLmMgPSBpbnN0YWxsZWRNb2R1bGVzO1xuXG4gXHQvLyBkZWZpbmUgZ2V0dGVyIGZ1bmN0aW9uIGZvciBoYXJtb255IGV4cG9ydHNcbiBcdF9fd2VicGFja19yZXF1aXJlX18uZCA9IGZ1bmN0aW9uKGV4cG9ydHMsIG5hbWUsIGdldHRlcikge1xuIFx0XHRpZighX193ZWJwYWNrX3JlcXVpcmVfXy5vKGV4cG9ydHMsIG5hbWUpKSB7XG4gXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIG5hbWUsIHsgZW51bWVyYWJsZTogdHJ1ZSwgZ2V0OiBnZXR0ZXIgfSk7XG4gXHRcdH1cbiBcdH07XG5cbiBcdC8vIGRlZmluZSBfX2VzTW9kdWxlIG9uIGV4cG9ydHNcbiBcdF9fd2VicGFja19yZXF1aXJlX18uciA9IGZ1bmN0aW9uKGV4cG9ydHMpIHtcbiBcdFx0aWYodHlwZW9mIFN5bWJvbCAhPT0gJ3VuZGVmaW5lZCcgJiYgU3ltYm9sLnRvU3RyaW5nVGFnKSB7XG4gXHRcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFN5bWJvbC50b1N0cmluZ1RhZywgeyB2YWx1ZTogJ01vZHVsZScgfSk7XG4gXHRcdH1cbiBcdFx0T2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsICdfX2VzTW9kdWxlJywgeyB2YWx1ZTogdHJ1ZSB9KTtcbiBcdH07XG5cbiBcdC8vIGNyZWF0ZSBhIGZha2UgbmFtZXNwYWNlIG9iamVjdFxuIFx0Ly8gbW9kZSAmIDE6IHZhbHVlIGlzIGEgbW9kdWxlIGlkLCByZXF1aXJlIGl0XG4gXHQvLyBtb2RlICYgMjogbWVyZ2UgYWxsIHByb3BlcnRpZXMgb2YgdmFsdWUgaW50byB0aGUgbnNcbiBcdC8vIG1vZGUgJiA0OiByZXR1cm4gdmFsdWUgd2hlbiBhbHJlYWR5IG5zIG9iamVjdFxuIFx0Ly8gbW9kZSAmIDh8MTogYmVoYXZlIGxpa2UgcmVxdWlyZVxuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy50ID0gZnVuY3Rpb24odmFsdWUsIG1vZGUpIHtcbiBcdFx0aWYobW9kZSAmIDEpIHZhbHVlID0gX193ZWJwYWNrX3JlcXVpcmVfXyh2YWx1ZSk7XG4gXHRcdGlmKG1vZGUgJiA4KSByZXR1cm4gdmFsdWU7XG4gXHRcdGlmKChtb2RlICYgNCkgJiYgdHlwZW9mIHZhbHVlID09PSAnb2JqZWN0JyAmJiB2YWx1ZSAmJiB2YWx1ZS5fX2VzTW9kdWxlKSByZXR1cm4gdmFsdWU7XG4gXHRcdHZhciBucyA9IE9iamVjdC5jcmVhdGUobnVsbCk7XG4gXHRcdF9fd2VicGFja19yZXF1aXJlX18ucihucyk7XG4gXHRcdE9iamVjdC5kZWZpbmVQcm9wZXJ0eShucywgJ2RlZmF1bHQnLCB7IGVudW1lcmFibGU6IHRydWUsIHZhbHVlOiB2YWx1ZSB9KTtcbiBcdFx0aWYobW9kZSAmIDIgJiYgdHlwZW9mIHZhbHVlICE9ICdzdHJpbmcnKSBmb3IodmFyIGtleSBpbiB2YWx1ZSkgX193ZWJwYWNrX3JlcXVpcmVfXy5kKG5zLCBrZXksIGZ1bmN0aW9uKGtleSkgeyByZXR1cm4gdmFsdWVba2V5XTsgfS5iaW5kKG51bGwsIGtleSkpO1xuIFx0XHRyZXR1cm4gbnM7XG4gXHR9O1xuXG4gXHQvLyBnZXREZWZhdWx0RXhwb3J0IGZ1bmN0aW9uIGZvciBjb21wYXRpYmlsaXR5IHdpdGggbm9uLWhhcm1vbnkgbW9kdWxlc1xuIFx0X193ZWJwYWNrX3JlcXVpcmVfXy5uID0gZnVuY3Rpb24obW9kdWxlKSB7XG4gXHRcdHZhciBnZXR0ZXIgPSBtb2R1bGUgJiYgbW9kdWxlLl9fZXNNb2R1bGUgP1xuIFx0XHRcdGZ1bmN0aW9uIGdldERlZmF1bHQoKSB7IHJldHVybiBtb2R1bGVbJ2RlZmF1bHQnXTsgfSA6XG4gXHRcdFx0ZnVuY3Rpb24gZ2V0TW9kdWxlRXhwb3J0cygpIHsgcmV0dXJuIG1vZHVsZTsgfTtcbiBcdFx0X193ZWJwYWNrX3JlcXVpcmVfXy5kKGdldHRlciwgJ2EnLCBnZXR0ZXIpO1xuIFx0XHRyZXR1cm4gZ2V0dGVyO1xuIFx0fTtcblxuIFx0Ly8gT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLm8gPSBmdW5jdGlvbihvYmplY3QsIHByb3BlcnR5KSB7IHJldHVybiBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwob2JqZWN0LCBwcm9wZXJ0eSk7IH07XG5cbiBcdC8vIF9fd2VicGFja19wdWJsaWNfcGF0aF9fXG4gXHRfX3dlYnBhY2tfcmVxdWlyZV9fLnAgPSBcIlwiO1xuXG5cbiBcdC8vIExvYWQgZW50cnkgbW9kdWxlIGFuZCByZXR1cm4gZXhwb3J0c1xuIFx0cmV0dXJuIF9fd2VicGFja19yZXF1aXJlX18oX193ZWJwYWNrX3JlcXVpcmVfXy5zID0gNCk7XG4iLCJjbGFzcyBOb3RpY2VNb2R1bGUge1xuICAgIGNvbnN0cnVjdG9yKCkge1xuXG4gICAgICAgIHRoaXMucmVxdWVzdFVybCA9ICdodHRwczovL2FwaS5oZWxzaW5nYm9yZy5zZS9hbGFybS9qc29uL3dwL3YyL2Rpc3R1cmJhbmNlcyc7XG4gICAgICAgIHRoaXMuZGF0YSA9IHt9O1xuXG4gICAgICAgIGlmIChkaXN0dXJiYW5jZXMucGxhY2VzLmpvaW4oJywnKS5sZW5ndGggPiAwKSB7XG4gICAgICAgICAgICB0aGlzLmRhdGEucGxhY2UgPSBkaXN0dXJiYW5jZXMucGxhY2VzLmpvaW4oJywnKTtcbiAgICAgICAgfVxuICAgICAgICBcbiAgICAgICAgdGhpcy5nZXROb3RpY2VzKCk7XG4gICAgfVxuXG4gICAgZ2V0Tm90aWNlcygpIHtcblxuICAgICAgICBsZXQgZGF0YVF1ZXJ5ID0gdGhpcy5zZXJpYWxpemUodGhpcy5kYXRhKTtcblxuICAgICAgICBhc3luYyBmdW5jdGlvbiBwb3N0RGF0YSh1cmwgPSAnJykge1xuICAgICAgICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaCh1cmwsIHtcbiAgICAgICAgICAgICAgICBjYWNoZTogJ25vLWNhY2hlJyxcbiAgICAgICAgICAgICAgICBoZWFkZXJzOiB7XG4gICAgICAgICAgICAgICAgICAgICdDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkJyxcbiAgICAgICAgICAgICAgICB9LFxuICAgICAgICAgICAgICAgIHJlZGlyZWN0OiAnZm9sbG93JyxcbiAgICAgICAgICAgICAgICByZWZlcnJlclBvbGljeTogJ25vLXJlZmVycmVyJyxcbiAgICAgICAgICAgIH0pO1xuXG4gICAgICAgICAgICBpZiAocmVzcG9uc2Uuc3RhdHVzICE9PSAyMDApIHtcbiAgICAgICAgICAgICAgICByZXR1cm4gZmFsc2U7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIHJldHVybiByZXNwb25zZS5qc29uKCk7XG4gICAgICAgIH1cblxuICAgICAgICBwb3N0RGF0YShgJHt0aGlzLnJlcXVlc3RVcmx9PyR7ZGF0YVF1ZXJ5fWApLnRoZW4oKHJlc3BvbnNlKSA9PiB7XG5cbiAgICAgICAgICAgIGlmIChkaXN0dXJiYW5jZXMub3V0cHV0X3NtYWxsX2FjdGl2ZSkge1xuICAgICAgICAgICAgICAgIHJlc3BvbnNlLnNtYWxsLmZvckVhY2goaXRlbSA9PiB7XG4gICAgICAgICAgICAgICAgICAgIGlmIChkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCcjZGlzdHVyYmFuY2UtJyArIGl0ZW0uSUQpLmxlbmd0aCA+IDApIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybjtcbiAgICAgICAgICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICAgICAgICAgIHRoaXMuZ2V0VGVtcGxhdGUoaXRlbSlcblxuICAgICAgICAgICAgICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGRpc3R1cmJhbmNlcy5vdXRwdXRfc21hbGwpLmluc2VydEFkamFjZW50SFRNTCgnYWZ0ZXJiZWdpbicsIHRoaXMuZ2V0VGVtcGxhdGUoaXRlbSkpO1xuICAgICAgICAgICAgICAgIH0pO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBpZiAoZGlzdHVyYmFuY2VzLm91dHB1dF9iaWdfYWN0aXZlKSB7XG4gICAgICAgICAgICAgICAgcmVzcG9uc2UuYmlnLmZvckVhY2goaXRlbSA9PiB7XG4gICAgICAgICAgICAgICAgICAgIGlmIChkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCcjZGlzdHVyYmFuY2UtJyArIGl0ZW0uSUQpLmxlbmd0aCA+IDApIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybjtcbiAgICAgICAgICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICAgICAgICAgIHRoaXMuZ2V0VGVtcGxhdGUoaXRlbSwgdHJ1ZSlcblxuICAgICAgICAgICAgICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGRpc3R1cmJhbmNlcy5vdXRwdXRfYmlnKS5pbnNlcnRBZGphY2VudEhUTUwoJ2FmdGVyYmVnaW4nLCB0aGlzLmdldFRlbXBsYXRlKGl0ZW0sIHRydWUpKTtcbiAgICAgICAgICAgICAgICB9KTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfSkuY2F0Y2goKGUpID0+IHtcbiAgICAgICAgICAgIGNvbnNvbGUubG9nKGUpXG4gICAgICAgICAgICBjb25zb2xlLmxvZygnQVBJIEFsYXJtIEludGVncmF0aW9uIHBsdWdpbjogUmVxdWVzdCBmYWlsZWQhJyk7XG4gICAgICAgIH0pO1xuICAgIH1cblxuICAgIHNlcmlhbGl6ZShvYmopIHtcbiAgICAgICAgbGV0IHN0ciA9IFtdO1xuICAgICAgICBmb3IgKGxldCBwYXJhbSBpbiBvYmopXG4gICAgICAgICAgICBpZiAob2JqLmhhc093blByb3BlcnR5KHBhcmFtKSkge1xuICAgICAgICAgICAgICAgIHN0ci5wdXNoKGVuY29kZVVSSUNvbXBvbmVudChwYXJhbSkgKyBcIj1cIiArIGVuY29kZVVSSUNvbXBvbmVudChvYmpbcGFyYW1dKSk7XG4gICAgICAgICAgICB9XG4gICAgICAgIHJldHVybiBzdHIuam9pbihcIiZcIik7XG4gICAgfVxuXG4gICAgZ2V0VGVtcGxhdGUoaXRlbSwgYmlnID0gZmFsc2UsKSB7XG4gICAgICAgIGxldCBzaXplID0gYmlnID8gJ3dhcm5pbmcnIDogJ2luZm8nO1xuXG4gICAgICAgIHJldHVybiAnXFw8ZGl2IGlkPVwiZGlzdHVyYmFuY2UtJyArIGl0ZW0uSUQgKyAnXCIgY2xhc3M9XCJtb2R1bGFyaXR5LW1vZC1ub3RpY2VzIGMtbm90aWNlIGMtbm90aWNlLS0nICsgc2l6ZSArICcgdS1tYXJnaW4tLTBcIiBzdHlsZT1cImJvcmRlci1yYWRpdXM6IDAgIWltcG9ydGFudDs7IGJveC1zaGFkb3c6IG5vbmUgIWltcG9ydGFudDtcIj5cXFxuICAgICAgICA8c3BhbiBjbGFzcz1cImMtbm90aWNlX19pY29uXCI+XFw8aSBpZD1cIlwiIGNsYXNzPVwiYy1pY29uIGMtaWNvbi0tY29sb3ItIGMtaWNvbi0tc2l6ZS1tZCBtYXRlcmlhbC1pY29uc1wiIGRhdGEtdWlkPVwiNWZhMDAzOTU3NWZkY1wiPmZvcnVtXFw8L2k+XFw8L3NwYW4+XFw8c3BhbiBjbGFzcz1cImMtbm90aWNlX19tZXNzYWdlLS1zbVwiPjxzdHJvbmc+JyArIGl0ZW0ucG9zdF90aXRsZSArICdcXDwvc3Ryb25nPjwvc3Bhbj48L2JyPicgKyBpdGVtLnBvc3RfY29udGVudCArICdcXDwvZGl2Pic7XG4gICAgfVxufVxuXG5leHBvcnQgZGVmYXVsdCBOb3RpY2VNb2R1bGVcbiIsIlxuICAgIGltcG9ydCBOb3RpY2VNb2R1bGUgZnJvbSAnLi9hcGktYWxhcm0tbm90aWNlJztcbiAgICBcbmRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoXCJET01Db250ZW50TG9hZGVkXCIsIGZ1bmN0aW9uKGV2ZW50KSB7IFxuICAgIGNvbnN0IE5vdGljZUluc3RhbmNlID0gbmV3IE5vdGljZU1vZHVsZSgpO1xufSk7Il0sInNvdXJjZVJvb3QiOiIifQ==</script><script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'sv',
+                    autoDisplay: false,
+                    gaTrack: HbgPrimeArgs.googleTranslate.gaTrack,
+                    gaId: HbgPrimeArgs.googleTranslate.gaUA,
+                },
+                'google-translate-element'
+            );
+        }
+        </script><script>// --Vergic--
+if (typeof(disableVergic) == 'undefined') {
+(function (server, psID) {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.src = server + '/' + psID + '/ps.js';
+    document.getElementsByTagName('head')[0].appendChild(s);
+}('https://account.psplugin.com', '331F5271-4B0B-4625-BF08-4157F101DBFF'));
+}
+
+// -- Hotjar --
+/*    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1004672,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');*/
+
+//Vergic
+function expandVngageBanner() {
+  if(typeof window.vngageSolutionId != "undefined") {
+    var banner = vngage.getBanner(window.vngageSolutionId);
+    if(banner && banner.getDisplayStatus() !== 'expanded'){
+      banner.toggleExpand();
+      console.log("Expanding chat with solution id: " + window.vngageSolutionId); 
+    } else {
+      console.log("Chat box is already expanded."); 
+    }
+  } else {
+    console.log("Could not find any chat agent."); 
+  }
+}  
+
+/* Translate google */ 
+var translateButton = document.querySelectorAll('.translate-link');
+
+for(var tb = 0; tb < translateButton.length; tb++){
+    translateButton[tb].addEventListener('click', function(){
+        window.location = 'https://translate.google.com/translate?sl=sv&tl=en&u=' + window.location.href;
+    });
+}
+
+// -- Matomo Tag Manager
+var _mtm = window._mtm = window._mtm || [];
+_mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+g.type='text/javascript'; g.async=true; g.src='https://stats.helsingborg.se/js/container_5s8pnFok.js'; s.parentNode.insertBefore(g,s);
+ 
+</script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"363e987a0a","applicationID":"79998397","transactionName":"ZAdaNRZVWEQDAEFaXl1NbRMNG19ZBgZNHUFbEg==","queueTime":0,"applicationTime":1147,"atts":"SEBZQ15PS0o=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html><!--
+Performance optimized by Redis Object Cache. Learn more: https://wprediscache.com
+
+Retrieved 6842 objects (847 KB) from Redis using PhpRedis (v5.1.1).
+-->
